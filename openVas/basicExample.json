@@ -1,0 +1,173 @@
+{
+    "flow": [
+       {
+          "flowID": "5fca71e4-ee83-4863-a815-cab5723b2c42",
+          "next": [
+             {
+                "flowID": "7901fbe9-ec03-4b94-9363-350c490e3420",
+                "logic": true,
+                "order": 0
+             }
+          ],
+          "type": "trigger",
+          "subtype": "testFireTrigger",
+          "triggerID": "60aaae661c0645214bdeaaaf"
+       },
+       {
+          "flowID": "0eceeef9-3fb8-4950-aef7-4148ac632e74",
+          "next": [
+             {
+                "flowID": "260a0bb1-b853-4c84-8075-d4ffcc31f317",
+                "logic": true,
+                "order": 0
+             }
+          ],
+          "type": "trigger",
+          "triggerID": "60aaae7b1c0645214bdeaab4"
+       },
+       {
+          "flowID": "34cad4b4-08c5-4b80-a8ca-1dd6e478adb6",
+          "next": [],
+          "type": "action",
+          "subtype": "gvmProcessScans",
+          "actionID": "60aaaeba78e426545aa73acc"
+       },
+       {
+          "flowID": "7901fbe9-ec03-4b94-9363-350c490e3420",
+          "next": [],
+          "type": "action",
+          "subtype": "gvmNewScan",
+          "actionID": "60aaaef878e426545aa73adc"
+       },
+       {
+          "flowID": "260a0bb1-b853-4c84-8075-d4ffcc31f317",
+          "next": [
+             {
+                "flowID": "34cad4b4-08c5-4b80-a8ca-1dd6e478adb6",
+                "logic": true,
+                "order": 0
+             }
+          ],
+          "type": "action",
+          "subtype": "gvmConnect",
+          "actionID": "60aaaefe78e426545aa73ae0"
+       }
+    ],
+    "action": {
+       "60aaaeba78e426545aa73acc": {
+          "className": "gvmProcessScans",
+          "_id": "60aaaeba78e426545aa73acc",
+          "comment": "",
+          "createdBy": "",
+          "logicString": "",
+          "maxConcurrent": 3,
+          "name": "Default Scanner",
+          "scanTimeout": 3600,
+          "scannerId": "08b69003-5fc2-4037-a479-93b440211c73",
+          "scope": 0,
+          "varDefinitions": {}
+       },
+       "60aaaef878e426545aa73adc": {
+          "className": "gvmNewScan",
+          "_id": "60aaaef878e426545aa73adc",
+          "comment": "",
+          "configId": "daba56c8-73ec-11df-a475-002264764cea",
+          "createdBy": "",
+          "logicString": "",
+          "name": "Create LocalHost Scan",
+          "portListId": "33d0cd82-57c6-11e1-8ed1-406186ea4fc5",
+          "scannerId": "08b69003-5fc2-4037-a479-93b440211c73",
+          "scope": 0,
+          "target": "%%data[event][target]%%",
+          "varDefinitions": {}
+       },
+       "60aaaefe78e426545aa73ae0": {
+          "className": "gvmConnect",
+          "_id": "60aaaefe78e426545aa73ae0",
+          "comment": "",
+          "createdBy": "",
+          "host": "<ssh_host>",
+          "keyFile": "",
+          "logicString": "",
+          "name": "openVas Connect",
+          "openvasPassword": "<openvas_password>",
+          "openvasPort": 9390,
+          "openvasUsername": "<openvas_username>",
+          "password": "<ssh_password>",
+          "port": 22,
+          "scope": 0,
+          "username": "<ssh_username>",
+          "varDefinitions": {}
+       }
+    },
+    "trigger": {
+       "60aaae661c0645214bdeaaaf": {
+          "className": "testFireTrigger",
+          "_id": "60aaae661c0645214bdeaaaf",
+          "attemptCount": 0,
+          "autoRestartCount": 3,
+          "clusterSet": 0,
+          "comment": "",
+          "concurrency": 0,
+          "createdBy": "",
+          "events": [
+             {
+                "target": "192.168.0.1"
+             }
+          ],
+          "lastCheck": 1621963836.2578442,
+          "logicString": "",
+          "maxDuration": 60,
+          "name": "Trigger",
+          "schedule": "86400s",
+          "scope": 0,
+          "startTime": 0.0,
+          "varDefinitions": {}
+       },
+       "60aaae7b1c0645214bdeaab4": {
+          "className": "trigger",
+          "_id": "60aaae7b1c0645214bdeaab4",
+          "attemptCount": 0,
+          "autoRestartCount": 3,
+          "clusterSet": 0,
+          "comment": "",
+          "concurrency": 0,
+          "createdBy": "",
+          "lastCheck": 1621966551.3110256,
+          "logicString": "",
+          "maxDuration": 60,
+          "name": "Trigger Processor",
+          "schedule": "5-10s",
+          "scope": 0,
+          "startTime": 0.0,
+          "varDefinitions": {}
+       }
+    },
+    "ui": {
+       "5fca71e4-ee83-4863-a815-cab5723b2c42": {
+          "x": -545,
+          "y": -573,
+          "title": "Trigger"
+       },
+       "0eceeef9-3fb8-4950-aef7-4148ac632e74": {
+          "x": -542,
+          "y": -720,
+          "title": "Trigger Processor"
+       },
+       "34cad4b4-08c5-4b80-a8ca-1dd6e478adb6": {
+          "x": -140,
+          "y": -720,
+          "title": "Default Scanner"
+       },
+       "7901fbe9-ec03-4b94-9363-350c490e3420": {
+          "x": -241,
+          "y": -573,
+          "title": "Create LocalHost Scan"
+       },
+       "260a0bb1-b853-4c84-8075-d4ffcc31f317": {
+          "x": -348,
+          "y": -720,
+          "title": "openVas Connect"
+       }
+    }
+ }
