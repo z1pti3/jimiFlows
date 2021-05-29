@@ -1,0 +1,24 @@
+{
+   "description" : "Basic openVas flow consisting of two components. 1st component ( bottom flow ) is a flow that defines and sets a target for scanning. The target for this is defined within the testFireTrigger at the start of the flow. 2nd component manages the openVas server controlling the scans that have been requested as well as the retrieval of completed scan information.",
+   "requirements" : {
+      "jimi_min_version" : null,
+      "jimi_max_version" : null,
+      "plugins" : ["gvm"]
+   },
+   "felids" : {
+      "ssh_host" : {
+         "description" : "Host FQDN or IP address of the remote openVas server over SSH"
+      },
+      "ssh_username" : {
+         "description" : "Username to connect to the remote openVas server over SSH"
+      },
+      "ssh_password" : {
+         "description" : "Password to connect to the remote openVas server over SSH"
+      },"openvas_username" : {
+         "description" : "openVas username used to connect to your openVas deployment"
+      }
+      ,"openvas_password" : {
+         "description" : "openVas password used to connect to your openVas deployment"
+      }
+   }
+}
