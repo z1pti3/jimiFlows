@@ -1,0 +1,958 @@
+{
+   "flow": [
+      {
+         "flowID": "bebc7162-0da1-4fe9-92ae-4e9857370f80",
+         "next": [
+            {
+               "flowID": "9c36444d-724b-426f-a44e-77f666003276",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "trigger",
+         "subtype": "testFireTrigger",
+         "triggerID": "60c8e4b9a52c9335550a02fa"
+      },
+      {
+         "flowID": "e00ff1c3-1de6-4a1f-8019-2cdfd7c0f5c6",
+         "next": [
+            {
+               "flowID": "4a2e1c98-6003-46d4-afad-547b5f5327a8",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "remoteCommand",
+         "actionID": "60c8e563a31776d27fb2cb11"
+      },
+      {
+         "flowID": "9c36444d-724b-426f-a44e-77f666003276",
+         "next": [
+            {
+               "flowID": "ffcce109-e2c7-4a0f-b792-c722bdf44695",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "remoteConnectLinux",
+         "actionID": "60c8e568a31776d27fb2cb17"
+      },
+      {
+         "flowID": "c465f15b-d814-4982-a3e7-31be14515d05",
+         "next": [
+            {
+               "flowID": "e00ff1c3-1de6-4a1f-8019-2cdfd7c0f5c6",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "remoteMultiCommand",
+         "actionID": "60c8e6d1a31776d27fb2cb23"
+      },
+      {
+         "flowID": "4a2e1c98-6003-46d4-afad-547b5f5327a8",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "1ec8e3e4-0ce4-46fb-92fa-bf29a3220266",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8e82fa31776d27fb2cb36"
+      },
+      {
+         "flowID": "86ff24ff-cfd2-463c-951b-7571972ad2ab",
+         "next": [
+            {
+               "flowID": "f81e1c3f-0354-4395-912f-96937aed97d3",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "remoteMultiCommand",
+         "actionID": "60c8eab1a31776d27fb2cb42"
+      },
+      {
+         "flowID": "1ec8e3e4-0ce4-46fb-92fa-bf29a3220266",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "86ff24ff-cfd2-463c-951b-7571972ad2ab",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8ecaaa31776d27fb2cb4c"
+      },
+      {
+         "flowID": "f81e1c3f-0354-4395-912f-96937aed97d3",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "fc022bf9-e338-4309-807d-c88b7af85818",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8ed03a31776d27fb2cb5b"
+      },
+      {
+         "flowID": "ffcce109-e2c7-4a0f-b792-c722bdf44695",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "6fa4d90b-b65e-4862-8438-1a6e0e56fc34",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8ef59a31776d27fb2cb62"
+      },
+      {
+         "flowID": "fc022bf9-e338-4309-807d-c88b7af85818",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "650b600b-1218-4fdb-bc17-57b236fe3eec",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8efb4a31776d27fb2cb68"
+      },
+      {
+         "flowID": "650b600b-1218-4fdb-bc17-57b236fe3eec",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "ffcce109-e2c7-4a0f-b792-c722bdf44695",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8f007a31776d27fb2cb72"
+      },
+      {
+         "flowID": "6fa4d90b-b65e-4862-8438-1a6e0e56fc34",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "64417715-beee-42e7-981d-686d290fc87c",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8f339a31776d27fb2cb80"
+      },
+      {
+         "flowID": "64417715-beee-42e7-981d-686d290fc87c",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "fa955ceb-6591-4acf-b345-7bc4a459d279",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8f4ffa31776d27fb2cb89"
+      },
+      {
+         "flowID": "fa955ceb-6591-4acf-b345-7bc4a459d279",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "2d69b771-15a3-4171-a372-64602238e65f",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8f619a31776d27fb2cb95"
+      },
+      {
+         "flowID": "2d69b771-15a3-4171-a372-64602238e65f",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "e663a559-7957-44fd-943a-1361e237116b",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8f7fba31776d27fb2cba2"
+      },
+      {
+         "flowID": "e663a559-7957-44fd-943a-1361e237116b",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "1ea1e008-61b7-459e-bb8d-0968e0cfd8fc",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8f9d7a31776d27fb2cbae"
+      },
+      {
+         "flowID": "1ea1e008-61b7-459e-bb8d-0968e0cfd8fc",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "b6164fe4-2f4a-43f1-877c-25f4273bb24e",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8fa62a31776d27fb2cbb5"
+      },
+      {
+         "flowID": "5b34bc6f-55ae-4a97-9bd4-1c60a518b838",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "711c21d6-95a1-407b-a396-32c317c27df3",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8fafca31776d27fb2cbbb"
+      },
+      {
+         "flowID": "711c21d6-95a1-407b-a396-32c317c27df3",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "7f22022d-cc9a-4020-9c53-9bd0a1ef175e",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8fbb1a31776d27fb2cbc4"
+      },
+      {
+         "flowID": "7f22022d-cc9a-4020-9c53-9bd0a1ef175e",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "35ec28f3-3064-4e13-b5dd-db5d2140bbd5",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8fbd6a31776d27fb2cbca"
+      },
+      {
+         "flowID": "35ec28f3-3064-4e13-b5dd-db5d2140bbd5",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "f68f95ea-68a3-4301-9d10-c0f799879261",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c8fc43a31776d27fb2cbd8"
+      },
+      {
+         "flowID": "b6164fe4-2f4a-43f1-877c-25f4273bb24e",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "5b34bc6f-55ae-4a97-9bd4-1c60a518b838",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c900a2a31776d27fb2cbf4"
+      },
+      {
+         "flowID": "f68f95ea-68a3-4301-9d10-c0f799879261",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "836f8acf-dd3b-4495-8b83-cd7af117e3c4",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c90233a31776d27fb2cc11"
+      },
+      {
+         "flowID": "836f8acf-dd3b-4495-8b83-cd7af117e3c4",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "54c551c4-2bfe-4f62-ad18-23affa6a977a",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c902b4a31776d27fb2cc19"
+      },
+      {
+         "flowID": "54c551c4-2bfe-4f62-ad18-23affa6a977a",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "df141334-0460-428b-8641-1096643f355f",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c903c6a31776d27fb2cc3e"
+      },
+      {
+         "flowID": "df141334-0460-428b-8641-1096643f355f",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "fad639d5-e11a-4006-9795-c8d6a7343788",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c903f7a31776d27fb2cc43"
+      },
+      {
+         "flowID": "8a63439a-ae00-439e-a454-1f8ceb160d92",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "d2f01c6d-80a9-4839-9215-f4396f060498",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c9042ea31776d27fb2cc49"
+      },
+      {
+         "flowID": "d2f01c6d-80a9-4839-9215-f4396f060498",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "8e52b14c-33b3-4f4e-bc13-7062e375ca3e",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c905d1a31776d27fb2cc4f"
+      },
+      {
+         "flowID": "8e52b14c-33b3-4f4e-bc13-7062e375ca3e",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "af534949-1eb7-44dc-b991-83909e48c59a",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c9064fa31776d27fb2cc5f"
+      },
+      {
+         "flowID": "af534949-1eb7-44dc-b991-83909e48c59a",
+         "type": "action",
+         "next": [],
+         "actionID": "60c9068ca31776d27fb2cc64"
+      },
+      {
+         "flowID": "fad639d5-e11a-4006-9795-c8d6a7343788",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "8a63439a-ae00-439e-a454-1f8ceb160d92",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60c914dda31776d27fb2cc7e"
+      }
+   ],
+   "action": {
+      "60c8e563a31776d27fb2cb11": {
+         "className": "remoteCommand",
+         "_id": "60c8e563a31776d27fb2cb11",
+         "command": "apt-get install nmap -y",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Install NMAP",
+         "runAs": "",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c8e568a31776d27fb2cb17": {
+         "className": "remoteConnectLinux",
+         "_id": "60c8e568a31776d27fb2cb17",
+         "comment": "",
+         "createdBy": "",
+         "host": "",
+         "keyfile": "",
+         "logicString": "",
+         "name": "Connect to Host ( Ubuntu 20.04 )",
+         "password": "",
+         "port_forward": "",
+         "scope": 0,
+         "timeout": 10,
+         "user": "root",
+         "varDefinitions": {}
+      },
+      "60c8e6d1a31776d27fb2cb23": {
+         "className": "remoteMultiCommand",
+         "_id": "60c8e6d1a31776d27fb2cb23",
+         "commands": "apt-get update\napt-get upgrade -y\napt-get autoremove -y",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "System Update",
+         "runAs": "",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c8e82fa31776d27fb2cb36": {
+         "className": "remoteMultiCommand",
+         "_id": "60c8e82fa31776d27fb2cb36",
+         "commands": "apt-get install python3 python3-pip git -y\nmkdir /opt/theHarvester\ngit clone https://github.com/laramies/theHarvester.git /opt/theHarvester\npython3 -m pip install -r /opt/theHarvester/requirements/base.txt",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Install theHarvester",
+         "runAs": "",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c8eab1a31776d27fb2cb42": {
+         "className": "remoteMultiCommand",
+         "_id": "60c8eab1a31776d27fb2cb42",
+         "commands": "wget -O /tmp/geckodriver.tar.gz https://github.com/mozilla/geckodriver/releases/download/v0.29.1/geckodriver-v0.29.1-linux64.tar.gz\ngzip -d /tmp/geckodriver.tar.gz\ntar -xvf /tmp/geckodriver.tar -C /tmp/\nrm /tmp/geckodriver.tar\nmv /tmp/geckodriver /usr/local/bin\n",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Install geckodriver",
+         "runAs": "",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c8ecaaa31776d27fb2cb4c": {
+         "className": "remoteCommand",
+         "_id": "60c8ecaaa31776d27fb2cb4c",
+         "command": "apt-get install firefox -y",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Install Firefox",
+         "runAs": "",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c8ed03a31776d27fb2cb5b": {
+         "className": "remoteMultiCommand",
+         "_id": "60c8ed03a31776d27fb2cb5b",
+         "commands": "apt-get install -y software-properties-common\napt-get install -y build-essential cmake pkg-config libglib2.0-dev libgpgme-dev libgnutls28-dev uuid-dev libssh-gcrypt-dev libldap2-dev doxygen graphviz libradcli-dev libhiredis-dev libpcap-dev bison libksba-dev libsnmp-dev gcc-mingw-w64 heimdal-dev libpopt-dev xmltoman redis-server xsltproc libical-dev postgresql postgresql-contrib postgresql-server-dev-all gnutls-bin nmap rpm nsis curl wget fakeroot gnupg sshpass socat snmp smbclient libmicrohttpd-dev libxml2-dev python3-polib gettext rsync xml-twig-tools python3-paramiko python3-lxml python3-defusedxml python3-pip python3-psutil python3-impacket virtualenv vim git\napt-get install -y libnet1-dev libunistring-dev libjson-glib-dev\napt-get install -y gcc cmake pkg-config libical-dev libglib2.0-dev postgresql-server-dev-12\napt-get install -y texlive-latex-extra --no-install-recommends\napt-get install -y texlive-fonts-recommended\ncurl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -\necho \"deb https://dl.yarnpkg.com/debian/ stable main\" | tee /etc/apt/sources.list.d/yarn.list\napt-get update\napt-get install -y yarn\nyarn install\nyarn upgrade",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Install GVM Requirements",
+         "runAs": "",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c8ef59a31776d27fb2cb62": {
+         "className": "remoteCommand",
+         "_id": "60c8ef59a31776d27fb2cb62",
+         "command": "bash -c \"cd /opt/gvm/src/gvm-libs && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH && mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=/opt/gvm .. && make && make doc && make install\"",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Install gvm-libs",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c8efb4a31776d27fb2cb68": {
+         "className": "remoteMultiCommand",
+         "_id": "60c8efb4a31776d27fb2cb68",
+         "commands": "echo 'export PATH=\"$PATH:/opt/gvm/bin:/opt/gvm/sbin:/opt/gvm/.local/bin\"' | tee -a /etc/profile.d/gvm.sh \nchmod 0755 /etc/profile.d/gvm.sh \nsource /etc/profile.d/gvm.sh \necho \"/opt/gvm/lib\" > /etc/ld.so.conf.d/gvm.conf\nmkdir /opt/gvm\nadduser gvm --disabled-password --home /opt/gvm/ --no-create-home --gecos ''\nusermod -aG redis gvm\nchown gvm:gvm /opt/gvm/",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Create GVM User",
+         "runAs": "",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c8f007a31776d27fb2cb72": {
+         "className": "remoteMultiCommand",
+         "_id": "60c8f007a31776d27fb2cb72",
+         "commands": "mkdir /opt/gvm/src/\ngit clone https://github.com/greenbone/gvm-libs.git /opt/gvm/src/gvm-libs/\ngit clone --branch openvas-21.04 https://github.com/greenbone/openvas.git /opt/gvm/src/openvas/\ngit clone --branch gvmd-21.04 https://github.com/greenbone/gvmd.git /opt/gvm/src/gvmd/\ngit clone https://github.com/greenbone/openvas-smb.git /opt/gvm/src/openvas-smb/\ngit clone --branch gsa-21.04 https://github.com/greenbone/gsa.git /opt/gvm/src/gsa/\ngit clone --branch ospd-openvas-20.08 https://github.com/greenbone/ospd-openvas.git /opt/gvm/src/ospd-openvas/\ngit clone --branch ospd-21.04 https://github.com/greenbone/ospd.git /opt/gvm/src/ospd/\ngit clone https://github.com/greenbone/pg-gvm.git /opt/gvm/src/pg-gvm/",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Git Clone GVM Source",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c8f339a31776d27fb2cb80": {
+         "className": "remoteCommand",
+         "_id": "60c8f339a31776d27fb2cb80",
+         "command": "bash -c \"cd /opt/gvm/src/openvas-smb && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH && mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=/opt/gvm .. && make && make install\"",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Install openvas-smb",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c8f4ffa31776d27fb2cb89": {
+         "className": "remoteCommand",
+         "_id": "60c8f4ffa31776d27fb2cb89",
+         "command": "bash -c \"cd /opt/gvm/src/openvas && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH && mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=/opt/gvm .. && make && make doc && make install\"",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Install openvas Scanner",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c8f619a31776d27fb2cb95": {
+         "className": "remoteMultiCommand",
+         "_id": "60c8f619a31776d27fb2cb95",
+         "commands": "bash -c 'export LC_ALL=\"C\" && ldconfig'\ncp /etc/redis/redis.conf /etc/redis/redis.orig\ncp /opt/gvm/src/openvas/config/redis-openvas.conf /etc/redis/\nchown redis:redis /etc/redis/redis-openvas.conf\necho \"db_address = /run/redis-openvas/redis.sock\" > /opt/gvm/etc/openvas/openvas.conf\nsystemctl enable redis-server@openvas.service\nsystemctl start redis-server@openvas.service\nsysctl -w net.core.somaxconn=1024\nsysctl vm.overcommit_memory=1\necho \"net.core.somaxconn=1024\"  >> /etc/sysctl.conf\necho \"vm.overcommit_memory=1\" >> /etc/sysctl.conf\necho \"[Unit]\" > /etc/systemd/system/disable-thp.service\necho \"Description=Disable Transparent Huge Pages (THP)\" >> /etc/systemd/system/disable-thp.service\necho \"\" >> /etc/systemd/system/disable-thp.service\necho \"[Service]\" >> /etc/systemd/system/disable-thp.service\necho \"Type=simple\" >> /etc/systemd/system/disable-thp.service\necho \"ExecStart=/bin/sh -c \\\"echo 'never' > /sys/kernel/mm/transparent_hugepage/enabled && echo 'never' > /sys/kernel/mm/transparent_hugepage/defrag\\\"\" >> /etc/systemd/system/disable-thp.service\necho \"\" >> /etc/systemd/system/disable-thp.service\necho \"[Install]\" >> /etc/systemd/system/disable-thp.service\necho \"WantedBy=multi-user.target\" >> /etc/systemd/system/disable-thp.service\nsystemctl daemon-reload\nsystemctl start disable-thp\nsystemctl enable disable-thp\nsystemctl restart redis-server\nsed 's/Defaults\\s.*secure_path=\\\"\\/usr\\/local\\/sbin:\\/usr\\/local\\/bin:\\/usr\\/sbin:\\/usr\\/bin:\\/sbin:\\/bin:\\/snap\\/bin\\\"/Defaults secure_path=\\\"\\/usr\\/local\\/sbin:\\/usr\\/local\\/bin:\\/usr\\/sbin:\\/usr\\/bin:\\/sbin:\\/bin:\\/snap\\/bin:\\/opt\\/gvm\\/sbin\\\"/g' /etc/sudoers | EDITOR='tee' visudo\necho \"gvm ALL = NOPASSWD: /opt/gvm/sbin/openvas\" > /etc/sudoers.d/gvm\necho \"gvm ALL = NOPASSWD: /opt/gvm/sbin/gsad\" >> /etc/sudoers.d/gvm",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Fix redis for OpenVas",
+         "runAs": "",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c8f7fba31776d27fb2cba2": {
+         "className": "remoteCommand",
+         "_id": "60c8f7fba31776d27fb2cba2",
+         "command": "/opt/gvm/bin/greenbone-nvt-sync",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Update NVT",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 1800,
+         "varDefinitions": {}
+      },
+      "60c8f9d7a31776d27fb2cbae": {
+         "className": "remoteCommand",
+         "_id": "60c8f9d7a31776d27fb2cbae",
+         "command": "openvas -u",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Upload Plugins in redis with OpenVas",
+         "runAs": "",
+         "scope": 0,
+         "timeout": 1800,
+         "varDefinitions": {}
+      },
+      "60c8fa62a31776d27fb2cbb5": {
+         "className": "remoteCommand",
+         "_id": "60c8fa62a31776d27fb2cbb5",
+         "command": "bash -c \"cd /opt/gvm/src/gvmd && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH && mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=/opt/gvm .. && make && make doc && make install\"",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Install GVM Manager",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c8fafca31776d27fb2cbbb": {
+         "className": "remoteMultiCommand",
+         "_id": "60c8fafca31776d27fb2cbbb",
+         "commands": "createuser -DRS gvm\ncreatedb -O gvm gvmd\npsql gvmd -c \"create role dba with superuser noinherit;\"\npsql gvmd -c \"grant dba to gvm;\"\npsql gvmd -c 'create extension \"uuid-ossp\";'\npsql gvmd -c 'create extension \"pgcrypto\";'\npsql gvmd -c 'create extension \"pg-gvm\";'",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Configure PostgreSQL",
+         "runAs": "postgres",
+         "scope": 0,
+         "timeout": 60,
+         "varDefinitions": {}
+      },
+      "60c8fbb1a31776d27fb2cbc4": {
+         "className": "remoteCommand",
+         "_id": "60c8fbb1a31776d27fb2cbc4",
+         "command": "/opt/gvm/bin/gvm-manage-certs -a",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Fix GVM Certificates",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 60,
+         "varDefinitions": {}
+      },
+      "60c8fbd6a31776d27fb2cbca": {
+         "className": "remoteCommand",
+         "_id": "60c8fbd6a31776d27fb2cbca",
+         "command": "gvmd --create-user=admin --password=admin",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Create GVM Admin User",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 60,
+         "varDefinitions": {}
+      },
+      "60c8fc43a31776d27fb2cbd8": {
+         "className": "remoteCommand",
+         "_id": "60c8fc43a31776d27fb2cbd8",
+         "command": "gvmd --get-users --verbose | cut -d \" \" -f 2",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Get Admin User UID",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 60,
+         "varDefinitions": {
+            "admin_uid": {
+               "value": "%%strip(action[data])%%"
+            }
+         }
+      },
+      "60c900a2a31776d27fb2cbf4": {
+         "className": "remoteCommand",
+         "_id": "60c900a2a31776d27fb2cbf4",
+         "command": "bash -c \"cd /opt/gvm/src/pg-gvm && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH && mkdir build && cd build && cmake -DCMAKE_INSTALL_PREFIX=/opt/gvm .. && make && make install\"",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Install pg-gvm",
+         "runAs": "",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c90233a31776d27fb2cc11": {
+         "className": "remoteCommand",
+         "_id": "60c90233a31776d27fb2cc11",
+         "command": "gvmd --modify-setting 78eceaec-3385-11ea-b237-28d24461215b --value %%data[var][admin_uid]%%",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Modify GVMD Setting",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 60,
+         "varDefinitions": {}
+      },
+      "60c902b4a31776d27fb2cc19": {
+         "className": "remoteMultiCommand",
+         "_id": "60c902b4a31776d27fb2cc19",
+         "commands": "greenbone-feed-sync --type GVMD_DATA\ngreenbone-feed-sync --type SCAP\ngreenbone-feed-sync --type CERT",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Update Feeds",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 1800,
+         "varDefinitions": {}
+      },
+      "60c903c6a31776d27fb2cc3e": {
+         "className": "remoteCommand",
+         "_id": "60c903c6a31776d27fb2cc3e",
+         "command": "bash -c \"cd /opt/gvm/src/gsa && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH && mkdir build && cd build/ && cmake -DCMAKE_INSTALL_PREFIX=/opt/gvm .. && make && make doc && make install && touch /opt/gvm/var/log/gvm/gsad.log\"",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Install gsa",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 600,
+         "varDefinitions": {}
+      },
+      "60c903f7a31776d27fb2cc43": {
+         "className": "remoteCommand",
+         "_id": "60c903f7a31776d27fb2cc43",
+         "command": "bash -c \"cd /opt/gvm/src/ospd/ && pip3 install .\"",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Install ospd",
+         "runAs": "",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c9042ea31776d27fb2cc49": {
+         "className": "remoteCommand",
+         "_id": "60c9042ea31776d27fb2cc49",
+         "command": "bash -c \"cd /opt/gvm/src/ospd-openvas && export PKG_CONFIG_PATH=/opt/gvm/lib/pkgconfig:$PKG_CONFIG_PATH && pip3 install . && pip3 install paho-mqtt\"",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Install ospd-openvas",
+         "runAs": "",
+         "scope": 0,
+         "timeout": 300,
+         "varDefinitions": {}
+      },
+      "60c905d1a31776d27fb2cc4f": {
+         "className": "remoteMultiCommand",
+         "_id": "60c905d1a31776d27fb2cc4f",
+         "commands": "chown gvm:gvm -R /opt/gvm/\necho \"[Unit]\" > /etc/systemd/system/gvmd.service\necho \"Description=Open Vulnerability Assessment System Manager Daemon\" >> /etc/systemd/system/gvmd.service\necho \"Documentation=man:gvmd(8) https://www.greenbone.net\" >> /etc/systemd/system/gvmd.service\necho \"Wants=postgresql.service ospd-openvas.service\" >> /etc/systemd/system/gvmd.service\necho \"After=postgresql.service ospd-openvas.service\" >> /etc/systemd/system/gvmd.service\necho \"\" >> /etc/systemd/system/gvmd.service\necho \"[Service]\" >> /etc/systemd/system/gvmd.service\necho \"Type=forking\" >> /etc/systemd/system/gvmd.service\necho \"User=gvm\" >> /etc/systemd/system/gvmd.service\necho \"Group=gvm\" >> /etc/systemd/system/gvmd.service\necho \"PIDFile=/opt/gvm/var/run/gvmd.pid\" >> /etc/systemd/system/gvmd.service\necho \"WorkingDirectory=/opt/gvm\" >> /etc/systemd/system/gvmd.service\necho \"ExecStart=/opt/gvm/sbin/gvmd --osp-vt-update=/opt/gvm/var/run/ospd.sock\" >> /etc/systemd/system/gvmd.service\necho \"ExecReload=/bin/kill -HUP $MAINPID\" >> /etc/systemd/system/gvmd.service\necho \"KillMode=mixed\" >> /etc/systemd/system/gvmd.service\necho \"Restart=on-failure\" >> /etc/systemd/system/gvmd.service\necho \"RestartSec=2min\" >> /etc/systemd/system/gvmd.service\necho \"KillMode=process\" >> /etc/systemd/system/gvmd.service\necho \"KillSignal=SIGINT\" >> /etc/systemd/system/gvmd.service\necho \"GuessMainPID=no\" >> /etc/systemd/system/gvmd.service\necho \"PrivateTmp=true\" >> /etc/systemd/system/gvmd.service\necho \"\" >> /etc/systemd/system/gvmd.service\necho \"[Install]\" >> /etc/systemd/system/gvmd.service\necho \"WantedBy=multi-user.target\" >> /etc/systemd/system/gvmd.service\necho \"[Unit]\" > /etc/systemd/system/gsad.service\necho \"Description=Greenbone Security Assistant (gsad)\" >> /etc/systemd/system/gsad.service\necho \"Documentation=man:gsad(8) https://www.greenbone.net\" >> /etc/systemd/system/gsad.service\necho \"After=network.target\" >> /etc/systemd/system/gsad.service\necho \"Wants=gvmd.service\" >> /etc/systemd/system/gsad.service\necho \"\" >> /etc/systemd/system/gsad.service\necho \"[Service]\" >> /etc/systemd/system/gsad.service\necho \"Type=forking\" >> /etc/systemd/system/gsad.service\necho \"PIDFile=/opt/gvm/var/run/gsad.pid\" >> /etc/systemd/system/gsad.service\necho \"WorkingDirectory=/opt/gvm\" >> /etc/systemd/system/gsad.service\necho \"ExecStart=/opt/gvm/sbin/gsad --drop-privileges=gvm\" >> /etc/systemd/system/gsad.service\necho \"Restart=on-failure\" >> /etc/systemd/system/gsad.service\necho \"RestartSec=2min\" >> /etc/systemd/system/gsad.service\necho \"KillMode=process\" >> /etc/systemd/system/gsad.service\necho \"KillSignal=SIGINT\" >> /etc/systemd/system/gsad.service\necho \"GuessMainPID=no\" >> /etc/systemd/system/gsad.service\necho \"PrivateTmp=true\" >> /etc/systemd/system/gsad.service\necho \"\" >> /etc/systemd/system/gsad.service\necho \"[Install]\" >> /etc/systemd/system/gsad.service\necho \"WantedBy=multi-user.target\" >> /etc/systemd/system/gsad.service\necho \"[Unit]\" > /etc/systemd/system/ospd-openvas.service\necho \"Description=Job that runs the ospd-openvas daemon\" >> /etc/systemd/system/ospd-openvas.service\necho \"Documentation=man:gvm\" >> /etc/systemd/system/ospd-openvas.service \necho \"After=network.target redis-server@openvas.service\" >> /etc/systemd/system/ospd-openvas.service \necho \"Wants=redis-server@openvas.service\" >> /etc/systemd/system/ospd-openvas.service \necho \"\" >> /etc/systemd/system/ospd-openvas.service \necho \"[Service]\" >> /etc/systemd/system/ospd-openvas.service \necho \"Environment=PATH=/opt/gvm/bin/ospd-scanner/bin:/opt/gvm/bin:/opt/gvm/sbin:/opt/gvm/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\" >> /etc/systemd/system/ospd-openvas.service \necho \"Type=forking\" >> /etc/systemd/system/ospd-openvas.service \necho \"User=gvm\" >> /etc/systemd/system/ospd-openvas.service \necho \"Group=gvm\" >> /etc/systemd/system/ospd-openvas.service \necho \"WorkingDirectory=/opt/gvm\" >> /etc/systemd/system/ospd-openvas.service \necho \"PIDFile=/opt/gvm/var/run/ospd-openvas.pid\" >> /etc/systemd/system/ospd-openvas.service \necho \"ExecStart=/bin/python3 /opt/gvm/.local/bin/ospd-openvas --pid-file /opt/gvm/var/run/ospd-openvas.pid --unix-socket=/opt/gvm/var/run/ospd.sock --log-file /opt/gvm/var/log/gvm/ospd-scanner.log --lock-file-dir /opt/gvm/var/run/ospd/\" >> /etc/systemd/system/ospd-openvas.service \necho \"Restart=on-failure\" >> /etc/systemd/system/ospd-openvas.service \necho \"RestartSec=2min\" >> /etc/systemd/system/ospd-openvas.service \necho \"KillMode=process\" >> /etc/systemd/system/ospd-openvas.service \necho \"KillSignal=SIGINT\" >> /etc/systemd/system/ospd-openvas.service \necho \"GuessMainPID=no\" >> /etc/systemd/system/ospd-openvas.service \necho \"PrivateTmp=true\" >> /etc/systemd/system/ospd-openvas.service \necho \"\" >> /etc/systemd/system/ospd-openvas.service \necho \"[Install]\" >> /etc/systemd/system/ospd-openvas.service \necho \"WantedBy=multi-user.target\" >> /etc/systemd/system/ospd-openvas.service \nsystemctl daemon-reload\nsystemctl enable gvmd\nsystemctl enable gsad\nsystemctl enable ospd-openvas\nsystemctl start gvmd\nsystemctl start gsad\nsystemctl start ospd-openvas",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Setup and Start Services",
+         "runAs": "",
+         "scope": 0,
+         "timeout": 120,
+         "varDefinitions": {}
+      },
+      "60c9064fa31776d27fb2cc5f": {
+         "className": "remoteCommand",
+         "_id": "60c9064fa31776d27fb2cc5f",
+         "command": "gvmd --get-scanners | grep OpenVAS | cut -d \" \" -f 1",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Get GVM Scanner",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 60,
+         "varDefinitions": {
+            "scanner_uid": {
+               "value": "%%strip(action[data])%%"
+            }
+         }
+      },
+      "60c9068ca31776d27fb2cc64": {
+         "className": "remoteCommand",
+         "_id": "60c9068ca31776d27fb2cc64",
+         "command": "gvmd --modify-scanner=%%data[var][scanner_uid]%% --scanner-host=/opt/gvm/var/run/ospd.sock",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Modify GVM Scanner Setting",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 60,
+         "varDefinitions": {}
+      },
+      "60c914dda31776d27fb2cc7e": {
+         "className": "remoteCommand",
+         "_id": "60c914dda31776d27fb2cc7e",
+         "command": "mkdir /opt/gvm/var/run/ospd/",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Create ospd dir",
+         "runAs": "gvm",
+         "scope": 0,
+         "timeout": 60,
+         "varDefinitions": {}
+      }
+   },
+   "trigger": {
+      "60c8e4b9a52c9335550a02fa": {
+         "className": "testFireTrigger",
+         "_id": "60c8e4b9a52c9335550a02fa",
+         "attemptCount": 0,
+         "autoRestartCount": 3,
+         "clusterSet": 0,
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "events": [
+            1
+         ],
+         "lastCheck": 0.0,
+         "logicString": "",
+         "maxDuration": 7200,
+         "name": "Deploy Scanner",
+         "schedule": "",
+         "scope": 0,
+         "startTime": 0.0,
+         "varDefinitions": {}
+      }
+   },
+   "ui": {
+      "bebc7162-0da1-4fe9-92ae-4e9857370f80": {
+         "x": -1206,
+         "y": -403,
+         "title": "Deploy Scanner"
+      },
+      "e00ff1c3-1de6-4a1f-8019-2cdfd7c0f5c6": {
+         "x": -655,
+         "y": -219,
+         "title": "Install NMAP"
+      },
+      "9c36444d-724b-426f-a44e-77f666003276": {
+         "x": -937,
+         "y": -403,
+         "title": "Connect to Host ( Ubuntu 20.04 )"
+      },
+      "c465f15b-d814-4982-a3e7-31be14515d05": {
+         "x": -657,
+         "y": -326,
+         "title": "System Update"
+      },
+      "4a2e1c98-6003-46d4-afad-547b5f5327a8": {
+         "x": -655,
+         "y": -114,
+         "title": "Install theHarvester"
+      },
+      "86ff24ff-cfd2-463c-951b-7571972ad2ab": {
+         "x": -424,
+         "y": -5,
+         "title": "Install geckodriver"
+      },
+      "1ec8e3e4-0ce4-46fb-92fa-bf29a3220266": {
+         "x": -654,
+         "y": -3,
+         "title": "Install Firefox"
+      },
+      "f81e1c3f-0354-4395-912f-96937aed97d3": {
+         "x": -647,
+         "y": 156,
+         "title": "Install GVM Requirements"
+      },
+      "ffcce109-e2c7-4a0f-b792-c722bdf44695": {
+         "x": -198,
+         "y": 360,
+         "title": "Install gvm-libs"
+      },
+      "fc022bf9-e338-4309-807d-c88b7af85818": {
+         "x": -393,
+         "y": 156,
+         "title": "Create GVM User"
+      },
+      "650b600b-1218-4fdb-bc17-57b236fe3eec": {
+         "x": -391,
+         "y": 268,
+         "title": "Git Clone GVM Source"
+      },
+      "6fa4d90b-b65e-4862-8438-1a6e0e56fc34": {
+         "x": 16,
+         "y": 361,
+         "title": "Install openvas-smb"
+      },
+      "64417715-beee-42e7-981d-686d290fc87c": {
+         "x": 255,
+         "y": 359,
+         "title": "Install openvas Scanner"
+      },
+      "fa955ceb-6591-4acf-b345-7bc4a459d279": {
+         "x": 256,
+         "y": 486,
+         "title": "Fix redis for OpenVas"
+      },
+      "2d69b771-15a3-4171-a372-64602238e65f": {
+         "x": 256,
+         "y": 605,
+         "title": "Update NVT"
+      },
+      "e663a559-7957-44fd-943a-1361e237116b": {
+         "x": 507,
+         "y": 486,
+         "title": "Upload Plugins in redis with OpenVas"
+      },
+      "1ea1e008-61b7-459e-bb8d-0968e0cfd8fc": {
+         "x": 764,
+         "y": 348,
+         "title": "Install GVM Manager"
+      },
+      "5b34bc6f-55ae-4a97-9bd4-1c60a518b838": {
+         "x": 1055,
+         "y": 460,
+         "title": "Configure PostgreSQL"
+      },
+      "711c21d6-95a1-407b-a396-32c317c27df3": {
+         "x": 1055,
+         "y": 571,
+         "title": "Fix GVM Certificates"
+      },
+      "7f22022d-cc9a-4020-9c53-9bd0a1ef175e": {
+         "x": 1299,
+         "y": 570,
+         "title": "Create GVM Admin User"
+      },
+      "35ec28f3-3064-4e13-b5dd-db5d2140bbd5": {
+         "x": 1549,
+         "y": 570,
+         "title": "Get Admin User UID"
+      },
+      "b6164fe4-2f4a-43f1-877c-25f4273bb24e": {
+         "x": 1053,
+         "y": 348,
+         "title": "Install pg-gvm"
+      },
+      "f68f95ea-68a3-4301-9d10-c0f799879261": {
+         "x": 1795,
+         "y": 568,
+         "title": "Modify GVMD Setting"
+      },
+      "836f8acf-dd3b-4495-8b83-cd7af117e3c4": {
+         "x": 1793,
+         "y": 686,
+         "title": "Update Feeds"
+      },
+      "54c551c4-2bfe-4f62-ad18-23affa6a977a": {
+         "x": 2165,
+         "y": 355,
+         "title": "Install gsa"
+      },
+      "df141334-0460-428b-8641-1096643f355f": {
+         "x": 2393,
+         "y": 357,
+         "title": "Install ospd"
+      },
+      "8a63439a-ae00-439e-a454-1f8ceb160d92": {
+         "x": 2614,
+         "y": 359,
+         "title": "Install ospd-openvas"
+      },
+      "d2f01c6d-80a9-4839-9215-f4396f060498": {
+         "x": 2878,
+         "y": 362,
+         "title": "Setup and Start Services"
+      },
+      "8e52b14c-33b3-4f4e-bc13-7062e375ca3e": {
+         "x": 2875,
+         "y": 530,
+         "title": "Get GVM Scanner"
+      },
+      "af534949-1eb7-44dc-b991-83909e48c59a": {
+         "x": 3141,
+         "y": 530,
+         "title": "Modify GVM Scanner Setting"
+      },
+      "fad639d5-e11a-4006-9795-c8d6a7343788": {
+         "x": 2393,
+         "y": 460,
+         "title": "Create ospd dir"
+      }
+   }
+}
