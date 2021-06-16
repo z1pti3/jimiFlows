@@ -391,15 +391,15 @@
          "_id": "60c8e568a31776d27fb2cb17",
          "comment": "",
          "createdBy": "",
-         "host": "178.62.65.175",
+         "host": "",
          "keyfile": "",
          "logicString": "",
          "name": "Connect to Host ( Ubuntu 20.04 )",
-         "password": "ENC j1 dgNee8ssFpeu5lBwSIPZKQ== MLvD9Zb2xyVIBTe0pbZxKw== OJ0lXFGaBdDfCZLQ4XwblNuiv8ua5aJqBLtIgrPDKGMqtasVdZXuKCNgbqCXznaelacXjYEA9+9GyVu5z/sRR4gMuHex5LMYmTtjhywZ/WJ0rFtnwGFMS+HlAdS6sR0z0lBGML5w9nSnu63a1hN0rsjShP9hQyK58GUZP21l7qNC2rSBJGODj3wr7N33+zbSIiqD/MnQvcAK7EkkXHYCCPWvj/olp8vV+Ufl39h7+7i7swi5ZFzPpkAzN4vUm80rgU3QReMfKQYNDIBoGWK1/N+tGgJuvCAcdnJ+9bVNNqccHxifBw/+kM21aRPFrFWzM5qI1qIy31FnvSTfccVY2A== OM7+FjYKR6bISBFtJzjtubOAhmvIVFFbj3ebvx8qsC7So+YiaPa8Iimw9qYceTOT",
+         "password": "",
          "port_forward": "",
          "scope": 0,
          "timeout": 10,
-         "user": "root",
+         "user": "",
          "varDefinitions": {}
       },
       "60c8e6d1a31776d27fb2cb23": {
