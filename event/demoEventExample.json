@@ -1,0 +1,378 @@
+{
+   "flow": [
+      {
+         "flowID": "4f1cb582-0a47-42b3-89d1-513c1f3b0b9a",
+         "next": [
+            {
+               "flowID": "14361f06-0ada-401a-ba46-e1699ec99cad",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "trigger",
+         "triggerID": "60d8bf80d88610f0d35faaf3"
+      },
+      {
+         "flowID": "14361f06-0ada-401a-ba46-e1699ec99cad",
+         "next": [
+            {
+               "flowID": "e110e6b5-f972-4cdb-9393-060963dcf89e",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "assetMatch",
+         "actionID": "60d8bfc1d88610f0d35faafe"
+      },
+      {
+         "flowID": "81a2e092-3a62-44d4-9d2c-32b131cf6cd1",
+         "next": [],
+         "type": "action",
+         "subtype": "eventUpdate",
+         "actionID": "60d8c033d88610f0d35fab08"
+      },
+      {
+         "flowID": "1024ae3f-f492-49a4-96ab-a661c93a7707",
+         "next": [
+            {
+               "flowID": "3f4734f1-ce17-4c77-a92c-0588018b3ef8",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "trigger",
+         "subtype": "testFireTrigger",
+         "triggerID": "60d8c0dfd88610f0d35fab12"
+      },
+      {
+         "flowID": "3f4734f1-ce17-4c77-a92c-0588018b3ef8",
+         "next": [
+            {
+               "flowID": "7b500bb4-ddd2-4ce1-bdd3-27bfad5e3d88",
+               "logic": 201,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "raiseEvent",
+         "actionID": "60d8c130d88610f0d35fab17"
+      },
+      {
+         "flowID": "e110e6b5-f972-4cdb-9393-060963dcf89e",
+         "next": [
+            {
+               "flowID": "d5bb9023-451f-4eb5-a55a-8669841815c4",
+               "logic": true,
+               "order": 0
+            },
+            {
+               "flowID": "ea0aa8f3-9d30-45a8-ba80-788ac0a533ee",
+               "logic": 200,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "forEach",
+         "actionID": "60d8c451d88610f0d35fab1e"
+      },
+      {
+         "flowID": "d5bb9023-451f-4eb5-a55a-8669841815c4",
+         "next": [
+            {
+               "flowID": "e7d120b6-b410-4cef-9c0e-623475971fb3",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "actionID": "60d8c5bdd88610f0d35fab39"
+      },
+      {
+         "flowID": "ea0aa8f3-9d30-45a8-ba80-788ac0a533ee",
+         "next": [
+            {
+               "flowID": "81a2e092-3a62-44d4-9d2c-32b131cf6cd1",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "actionID": "60d8c647d88610f0d35fab44"
+      },
+      {
+         "flowID": "7b500bb4-ddd2-4ce1-bdd3-27bfad5e3d88",
+         "next": [],
+         "type": "action",
+         "subtype": "subFlow",
+         "actionID": "60d8c6e2d88610f0d35fab5e"
+      },
+      {
+         "flowID": "e7d120b6-b410-4cef-9c0e-623475971fb3",
+         "type": "action",
+         "next": [],
+         "actionID": "60d8d121d88610f0d35fab8c"
+      }
+   ],
+   "action": {
+      "60d8bfc1d88610f0d35faafe": {
+         "className": "assetMatch",
+         "_id": "60d8bfc1d88610f0d35faafe",
+         "comment": "",
+         "createdBy": "",
+         "lastSeenWithin": 1800,
+         "logicString": "",
+         "matches": {
+            "fields.email": [
+               "%%lower(data[event][email])%%"
+            ],
+            "fields.ip": [
+               "%%lower(data[event][ip])%%"
+            ],
+            "name": [
+               "%%lower(data[event][host])%%",
+               "%%lower(data[event][user])%%"
+            ],
+            "fields.user": [
+               "%%lower(data[event][user])%%"
+            ]
+         },
+         "name": "Match Asset Values",
+         "scope": 0,
+         "varDefinitions": {}
+      },
+      "60d8c033d88610f0d35fab08": {
+         "className": "eventUpdate",
+         "_id": "60d8c033d88610f0d35fab08",
+         "comment": "",
+         "createdBy": "",
+         "eventIndex": "%%data[var][eventIndex]%%",
+         "eventValues": {
+            "assets": "%%data[var][assets]%%",
+            "assets_data": "%%data[var][assets_data]%%"
+         },
+         "logicString": "",
+         "name": "Merge Event Values",
+         "scope": 0,
+         "updateMode": 2,
+         "varDefinitions": {}
+      },
+      "60d8c130d88610f0d35fab17": {
+         "className": "raiseEvent",
+         "_id": "60d8c130d88610f0d35fab17",
+         "accuracy": 5.0,
+         "benign": 90.0,
+         "comment": "",
+         "createdBy": "",
+         "eventSubType": "execution",
+         "eventTitle": "SRP Application Blocked",
+         "eventType": "user_behaviour",
+         "eventValues": {
+            "user": "%%data[event][user]%%",
+            "process": "%%data[event][process]%%",
+            "host": "%%data[event][host]%%"
+         },
+         "impact": 5.0,
+         "layer": 10,
+         "logicString": "",
+         "name": "Raise SRP Events",
+         "scope": 0,
+         "timeToLive": 300.0,
+         "uid": "SRP-%%data[event][host]%%-%%data[event][user]%%-%%data[event][process]%%",
+         "varDefinitions": {
+            "eventIndex": {
+               "value": "%%action[eventIndex]%%"
+            }
+         }
+      },
+      "60d8c451d88610f0d35fab1e": {
+         "className": "forEach",
+         "_id": "60d8c451d88610f0d35fab1e",
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "events": [],
+         "eventsField": "%%data[action][assets]%%",
+         "limit": 0,
+         "logicString": "",
+         "name": "forEach Asset",
+         "scope": 0,
+         "skip": 0,
+         "varDefinitions": {}
+      },
+      "60d8c5bdd88610f0d35fab39": {
+         "className": "action",
+         "_id": "60d8c5bdd88610f0d35fab39",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "if data[event][_id] != None",
+         "name": "Append asset_id to Assets Variable",
+         "scope": 0,
+         "varDefinitions": {
+            "assets": [
+               {
+                  "if": "if eventData[var][assets] != None",
+                  "scope": 1,
+                  "value": "%%append(eventData[var][assets],data[event][_id])%%"
+               },
+               {
+                  "if": "if eventData[var][assets] == None",
+                  "scope": 1,
+                  "value": [
+                     "%%data[event][_id]%%"
+                  ]
+               }
+            ]
+         }
+      },
+      "60d8c647d88610f0d35fab44": {
+         "className": "action",
+         "_id": "60d8c647d88610f0d35fab44",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Set Merge Variables to flowData",
+         "scope": 0,
+         "varDefinitions": {
+            "assets": {
+               "value": "%%eventData[var][assets]%%"
+            },
+            "assets_data": {
+               "value": "%%eventData[var][assets_data]%%"
+            }
+         }
+      },
+      "60d8c6e2d88610f0d35fab5e": {
+         "className": "subFlow",
+         "_id": "60d8c6e2d88610f0d35fab5e",
+         "comment": "",
+         "createdBy": "",
+         "eventsList": [],
+         "eventsValue": "",
+         "logicString": "",
+         "name": "Event Asset Enrichment",
+         "scope": 0,
+         "triggerID": "60d8bf80d88610f0d35faaf3",
+         "varDefinitions": {}
+      },
+      "60d8d121d88610f0d35fab8c": {
+         "className": "action",
+         "_id": "60d8d121d88610f0d35fab8c",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Set assets_data variable",
+         "scope": 0,
+         "varDefinitions": {
+            "assets_data": {
+               "scope": 1,
+               "value": {
+                  "%%data[event][_id]%%": {
+                     "fields": "%%data[event][fields]%%",
+                     "name": "%%data[event][name]%%"
+                  }
+               }
+            }
+         }
+      }
+   },
+   "trigger": {
+      "60d8bf80d88610f0d35faaf3": {
+         "className": "trigger",
+         "_id": "60d8bf80d88610f0d35faaf3",
+         "attemptCount": 0,
+         "autoRestartCount": 3,
+         "clusterSet": 0,
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "lastCheck": 1624822627.2992814,
+         "logicString": "",
+         "maxDuration": 60,
+         "name": "Event Asset Lookup",
+         "schedule": "",
+         "scope": 0,
+         "startTime": 0.0,
+         "systemIndex": 0,
+         "varDefinitions": {}
+      },
+      "60d8c0dfd88610f0d35fab12": {
+         "className": "testFireTrigger",
+         "_id": "60d8c0dfd88610f0d35fab12",
+         "attemptCount": 0,
+         "autoRestartCount": 3,
+         "clusterSet": 0,
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "events": [
+            {
+               "host": "ws-72512",
+               "process": "backdoor.exe",
+               "user": "tim.smith"
+            }
+         ],
+         "lastCheck": 0.0,
+         "logicString": "",
+         "maxDuration": 60,
+         "name": "Sample SRP Event",
+         "schedule": "",
+         "scope": 0,
+         "startTime": 0.0,
+         "systemIndex": 0,
+         "varDefinitions": {}
+      }
+   },
+   "ui": {
+      "4f1cb582-0a47-42b3-89d1-513c1f3b0b9a": {
+         "x": -587,
+         "y": -379,
+         "title": "Event Asset Lookup"
+      },
+      "14361f06-0ada-401a-ba46-e1699ec99cad": {
+         "x": -381,
+         "y": -298,
+         "title": "Match Asset Values"
+      },
+      "81a2e092-3a62-44d4-9d2c-32b131cf6cd1": {
+         "x": 474,
+         "y": -298,
+         "title": "Merge Event Values"
+      },
+      "1024ae3f-f492-49a4-96ab-a661c93a7707": {
+         "x": -607,
+         "y": 70,
+         "title": "Sample SRP Event"
+      },
+      "3f4734f1-ce17-4c77-a92c-0588018b3ef8": {
+         "x": -373,
+         "y": 69,
+         "title": "Raise SRP Events"
+      },
+      "e110e6b5-f972-4cdb-9393-060963dcf89e": {
+         "x": -131,
+         "y": -297,
+         "title": "forEach Asset"
+      },
+      "d5bb9023-451f-4eb5-a55a-8669841815c4": {
+         "x": -132,
+         "y": -167,
+         "title": "Append asset_id to Assets Variable"
+      },
+      "ea0aa8f3-9d30-45a8-ba80-788ac0a533ee": {
+         "x": 162,
+         "y": -297,
+         "title": "Set Merge Variables to flowData"
+      },
+      "7b500bb4-ddd2-4ce1-bdd3-27bfad5e3d88": {
+         "x": -109,
+         "y": 70,
+         "title": "Event Asset Enrichment"
+      },
+      "e7d120b6-b410-4cef-9c0e-623475971fb3": {
+         "x": 193,
+         "y": -167,
+         "title": "Set assets_data variable"
+      }
+   }
+}
