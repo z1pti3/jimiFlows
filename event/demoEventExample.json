@@ -112,6 +112,49 @@
          "type": "action",
          "next": [],
          "actionID": "60d8d121d88610f0d35fab8c"
+      },
+      {
+         "flowID": "ddab9d6b-9215-4d67-8742-01e6e2d12d50",
+         "type": "trigger",
+         "next": [
+            {
+               "flowID": "af551750-3fcb-434e-b12d-da16878ac948",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "triggerID": "60d8d98b65d7c299690b82b8"
+      },
+      {
+         "flowID": "af551750-3fcb-434e-b12d-da16878ac948",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "7b500bb4-ddd2-4ce1-bdd3-27bfad5e3d88",
+               "logic": 201,
+               "order": 0
+            }
+         ],
+         "actionID": "60d8daaf65d7c299690b82c0"
+      },
+      {
+         "flowID": "d397de06-7718-43fd-9fcb-d6367e875f65",
+         "next": [
+            {
+               "flowID": "fcfb21f6-e587-48e9-8eeb-818f6f71a645",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "trigger",
+         "triggerID": "60d8e05565d7c299690b82cc"
+      },
+      {
+         "flowID": "fcfb21f6-e587-48e9-8eeb-818f6f71a645",
+         "next": [],
+         "type": "action",
+         "subtype": "eventBuildCorrelations",
+         "actionID": "60d8e07465d7c299690b82d2"
       }
    ],
    "action": {
@@ -127,13 +170,15 @@
                "%%lower(data[event][email])%%"
             ],
             "fields.ip": [
-               "%%lower(data[event][ip])%%"
+               "%%lower(data[event][ip])%%",
+               "%%lower(data[event][src_ip])%%",
+               "%%lower(data[event][dest_ip])%%"
+            ],
+            "fields.user": [
+               "%%lower(data[event][user])%%"
             ],
             "name": [
                "%%lower(data[event][host])%%",
-               "%%lower(data[event][user])%%"
-            ],
-            "fields.user": [
                "%%lower(data[event][user])%%"
             ]
          },
@@ -274,6 +319,52 @@
                }
             }
          }
+      },
+      "60d8daaf65d7c299690b82c0": {
+         "className": "raiseEvent",
+         "_id": "60d8daaf65d7c299690b82c0",
+         "accuracy": 2.0,
+         "benign": 15.0,
+         "comment": "",
+         "createdBy": "",
+         "eventSubType": "ips",
+         "eventTitle": "IPS Detection",
+         "eventType": "network",
+         "eventValues": {
+            "src_ip": "%%data[event][src_ip]%%",
+            "dest_ip": "%%data[event][dest_ip]%%",
+            "attack": "%%data[event][attack]%%"
+         },
+         "impact": 3.0,
+         "layer": 1,
+         "logicString": "",
+         "name": "Raise IPS Event",
+         "scope": 0,
+         "timeToLive": 300.0,
+         "uid": "IPS-%%data[event][src_ip]%%-%%data[event][dest_ip]%%-%%data[event][attack]%%",
+         "varDefinitions": {
+            "eventIndex": {
+               "value": "%%action[eventIndex]%%"
+            }
+         }
+      },
+      "60d8e07465d7c299690b82d2": {
+         "className": "eventBuildCorrelations",
+         "_id": "60d8e07465d7c299690b82d2",
+         "comment": "",
+         "correlationFields": [
+            "assets"
+         ],
+         "correlationName": "siem",
+         "createdBy": "",
+         "excludeCorrelationValues": {},
+         "expiryTime": 86400,
+         "ignoreScoreLessThan": 0,
+         "logicString": "",
+         "name": "Build Correlations",
+         "oldestEvent": 86400,
+         "scope": 0,
+         "varDefinitions": {}
       }
    },
    "trigger": {
@@ -286,7 +377,7 @@
          "comment": "",
          "concurrency": 0,
          "createdBy": "",
-         "lastCheck": 1624822627.2992814,
+         "lastCheck": 1624828372.749441,
          "logicString": "",
          "maxDuration": 60,
          "name": "Event Asset Lookup",
@@ -321,6 +412,56 @@
          "startTime": 0.0,
          "systemIndex": 0,
          "varDefinitions": {}
+      },
+      "60d8d98b65d7c299690b82b8": {
+         "className": "testFireTrigger",
+         "_id": "60d8d98b65d7c299690b82b8",
+         "attemptCount": 0,
+         "autoRestartCount": 3,
+         "clusterSet": 0,
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "events": [
+            {
+               "attack": "http request smuggling",
+               "dest_ip": "172.16.7.44",
+               "src_ip": "8.8.8.8"
+            },
+            {
+               "attack": "http request smuggling",
+               "dest_ip": "172.16.1.104",
+               "src_ip": "8.8.8.8"
+            }
+         ],
+         "lastCheck": 0.0,
+         "logicString": "",
+         "maxDuration": 60,
+         "name": "Sample IPS Event",
+         "schedule": "",
+         "scope": 0,
+         "startTime": 0.0,
+         "systemIndex": 0,
+         "varDefinitions": {}
+      },
+      "60d8e05565d7c299690b82cc": {
+         "className": "trigger",
+         "_id": "60d8e05565d7c299690b82cc",
+         "attemptCount": 0,
+         "autoRestartCount": 3,
+         "clusterSet": 0,
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "lastCheck": 1624828660.6757646,
+         "logicString": "",
+         "maxDuration": 60,
+         "name": "Correlation Trigger",
+         "schedule": "10s",
+         "scope": 0,
+         "startTime": 0.0,
+         "systemIndex": 0,
+         "varDefinitions": {}
       }
    },
    "ui": {
@@ -340,8 +481,8 @@
          "title": "Merge Event Values"
       },
       "1024ae3f-f492-49a4-96ab-a661c93a7707": {
-         "x": -607,
-         "y": 70,
+         "x": -569,
+         "y": -33,
          "title": "Sample SRP Event"
       },
       "3f4734f1-ce17-4c77-a92c-0588018b3ef8": {
@@ -365,14 +506,34 @@
          "title": "Set Merge Variables to flowData"
       },
       "7b500bb4-ddd2-4ce1-bdd3-27bfad5e3d88": {
-         "x": -109,
-         "y": 70,
+         "x": -104,
+         "y": 131,
          "title": "Event Asset Enrichment"
       },
       "e7d120b6-b410-4cef-9c0e-623475971fb3": {
          "x": 193,
          "y": -167,
          "title": "Set assets_data variable"
+      },
+      "ddab9d6b-9215-4d67-8742-01e6e2d12d50": {
+         "x": -567,
+         "y": 122,
+         "title": "Sample IPS Event"
+      },
+      "af551750-3fcb-434e-b12d-da16878ac948": {
+         "x": -368,
+         "y": 208,
+         "title": "Raise IPS Event"
+      },
+      "d397de06-7718-43fd-9fcb-d6367e875f65": {
+         "x": 790,
+         "y": -641,
+         "title": "Correlation Trigger"
+      },
+      "fcfb21f6-e587-48e9-8eeb-818f6f71a645": {
+         "x": 977,
+         "y": -525,
+         "title": "Build Correlations"
       }
    }
 }
