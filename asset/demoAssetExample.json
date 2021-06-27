@@ -45,6 +45,11 @@
                "flowID": "ccb2dbf1-a702-4a51-a66e-148521919414",
                "logic": true,
                "order": 0
+            },
+            {
+               "flowID": "bbad1592-a254-4774-996e-3a4a5f8fd0bd",
+               "logic": true,
+               "order": 0
             }
          ],
          "type": "trigger",
@@ -86,6 +91,12 @@
          "type": "action",
          "next": [],
          "actionID": "60d8a984f3a397a15c6c2153"
+      },
+      {
+         "flowID": "bbad1592-a254-4774-996e-3a4a5f8fd0bd",
+         "type": "action",
+         "next": [],
+         "actionID": "60d8c96cd88610f0d35fab66"
       }
    ],
    "action": {
@@ -139,12 +150,12 @@
       "60ce0a832e3d63f71e4178a6": {
          "className": "assetProcess",
          "_id": "60ce0a832e3d63f71e4178a6",
-         "assetEntity": "test1",
+         "assetEntity": "Some Company",
          "assetType": "computer",
          "comment": "",
          "createdBy": "",
          "logicString": "",
-         "name": "Process Assets",
+         "name": "Process Assets - Computer",
          "scope": 0,
          "varDefinitions": {}
       },
@@ -185,6 +196,18 @@
          "updateSource": "Active Directory",
          "updateTime": "%%now()%%",
          "varDefinitions": {}
+      },
+      "60d8c96cd88610f0d35fab66": {
+         "className": "assetProcess",
+         "_id": "60d8c96cd88610f0d35fab66",
+         "assetEntity": "Some Company",
+         "assetType": "user",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Process Asset - User",
+         "scope": 0,
+         "varDefinitions": {}
       }
    },
    "trigger": {
@@ -211,7 +234,7 @@
                "os": "Windows 7 Pro"
             }
          ],
-         "lastCheck": 1624817188.0083914,
+         "lastCheck": 1624820023.646977,
          "logicString": "",
          "maxDuration": 60,
          "name": "Build Computer Assets",
@@ -230,7 +253,7 @@
          "comment": "",
          "concurrency": 0,
          "createdBy": "",
-         "lastCheck": 1624817187.9763348,
+         "lastCheck": 1624820098.8131883,
          "logicString": "",
          "maxDuration": 60,
          "name": "Every 10 seconds",
@@ -255,7 +278,7 @@
                "dest_ip": "172.16.1.104"
             }
          ],
-         "lastCheck": 1624817097.733203,
+         "lastCheck": 1624820043.6809428,
          "logicString": "",
          "maxDuration": 60,
          "name": "Build Sample Connection Relationship",
@@ -288,7 +311,7 @@
                "department": "HR"
             }
          ],
-         "lastCheck": 1624817127.833134,
+         "lastCheck": 1624819968.4941025,
          "logicString": "",
          "maxDuration": 60,
          "name": "Build User Assets",
@@ -318,11 +341,11 @@
       "ccb2dbf1-a702-4a51-a66e-148521919414": {
          "x": -220,
          "y": -878,
-         "title": "Process Assets"
+         "title": "Process Assets - Computer"
       },
       "89d1ee5c-4df3-4665-bf4c-93a7b7c94e4e": {
-         "x": -519,
-         "y": -878,
+         "x": -520,
+         "y": -843,
          "title": "Every 10 seconds"
       },
       "14e9fee0-7605-48dd-893f-89d58814b2eb": {
@@ -344,6 +367,11 @@
          "x": -1167,
          "y": -354,
          "title": "Update User Asset AD"
+      },
+      "bbad1592-a254-4774-996e-3a4a5f8fd0bd": {
+         "x": -213,
+         "y": -801,
+         "title": "Process Asset - User"
       }
    }
 }
