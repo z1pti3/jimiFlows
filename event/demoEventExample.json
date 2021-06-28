@@ -155,6 +155,30 @@
          "type": "action",
          "subtype": "eventBuildCorrelations",
          "actionID": "60d8e07465d7c299690b82d2"
+      },
+      {
+         "flowID": "4da13268-98c2-4f6a-a98c-835f18d50255",
+         "type": "trigger",
+         "next": [
+            {
+               "flowID": "68813cd0-fd82-4f2a-bc6f-86ac81044227",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "triggerID": "60da0de36384a4ae12f221af"
+      },
+      {
+         "flowID": "68813cd0-fd82-4f2a-bc6f-86ac81044227",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "7b500bb4-ddd2-4ce1-bdd3-27bfad5e3d88",
+               "logic": 201,
+               "order": 0
+            }
+         ],
+         "actionID": "60da0e3f6384a4ae12f221b5"
       }
    ],
    "action": {
@@ -210,7 +234,7 @@
          "comment": "",
          "createdBy": "",
          "eventSubType": "execution",
-         "eventTitle": "SRP Application Blocked",
+         "eventTitle": "Prevent Execution - %%data[event][process]%%",
          "eventType": "user_behaviour",
          "eventValues": {
             "user": "%%data[event][user]%%",
@@ -328,7 +352,7 @@
          "comment": "",
          "createdBy": "",
          "eventSubType": "ips",
-         "eventTitle": "IPS Detection",
+         "eventTitle": "IPS - %%data[event][attack]%%",
          "eventType": "network",
          "eventValues": {
             "src_ip": "%%data[event][src_ip]%%",
@@ -365,6 +389,34 @@
          "oldestEvent": 86400,
          "scope": 0,
          "varDefinitions": {}
+      },
+      "60da0e3f6384a4ae12f221b5": {
+         "className": "raiseEvent",
+         "_id": "60da0e3f6384a4ae12f221b5",
+         "accuracy": 2.0,
+         "benign": 15.0,
+         "comment": "",
+         "createdBy": "",
+         "eventSubType": "ips",
+         "eventTitle": "Blocked Website - %%data[event][dest_host]%%",
+         "eventType": "network",
+         "eventValues": {
+            "dest_host": "%%data[event][dest_host]%%",
+            "dest_ip": "%%data[event][dest_ip]%%",
+            "src_ip": "%%data[event][src_ip]%%"
+         },
+         "impact": 3.0,
+         "layer": 1,
+         "logicString": "",
+         "name": "Raise Blocked Website Events",
+         "scope": 0,
+         "timeToLive": 300.0,
+         "uid": "Blocked Website-%%data[event][src_ip]%%-%%data[event][dest_host]%%-%%data[event][dest_ip]%%",
+         "varDefinitions": {
+            "eventIndex": {
+               "value": "%%action[eventIndex]%%"
+            }
+         }
       }
    },
    "trigger": {
@@ -377,7 +429,7 @@
          "comment": "",
          "concurrency": 0,
          "createdBy": "",
-         "lastCheck": 1624828372.749441,
+         "lastCheck": 1624903550.38606,
          "logicString": "",
          "maxDuration": 60,
          "name": "Event Asset Lookup",
@@ -403,11 +455,11 @@
                "user": "tim.smith"
             }
          ],
-         "lastCheck": 0.0,
+         "lastCheck": 1624903540.3944986,
          "logicString": "",
          "maxDuration": 60,
          "name": "Sample SRP Event",
-         "schedule": "",
+         "schedule": "86500s",
          "scope": 0,
          "startTime": 0.0,
          "systemIndex": 0,
@@ -434,11 +486,11 @@
                "src_ip": "8.8.8.8"
             }
          ],
-         "lastCheck": 0.0,
+         "lastCheck": 1624903545.4504156,
          "logicString": "",
          "maxDuration": 60,
          "name": "Sample IPS Event",
-         "schedule": "",
+         "schedule": "86500s",
          "scope": 0,
          "startTime": 0.0,
          "systemIndex": 0,
@@ -453,11 +505,37 @@
          "comment": "",
          "concurrency": 0,
          "createdBy": "",
-         "lastCheck": 1624828660.6757646,
+         "lastCheck": 1624903615.3558838,
          "logicString": "",
          "maxDuration": 60,
          "name": "Correlation Trigger",
          "schedule": "10s",
+         "scope": 0,
+         "startTime": 0.0,
+         "systemIndex": 0,
+         "varDefinitions": {}
+      },
+      "60da0de36384a4ae12f221af": {
+         "className": "testFireTrigger",
+         "_id": "60da0de36384a4ae12f221af",
+         "attemptCount": 0,
+         "autoRestartCount": 3,
+         "clusterSet": 0,
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "events": [
+            {
+               "dest_host": "www.google.com/backwebsite",
+               "src_ip": "172.16.7.44",
+               "dest_ip": "8.8.8.8"
+            }
+         ],
+         "lastCheck": 1624903550.3871706,
+         "logicString": "",
+         "maxDuration": 60,
+         "name": "Sample Blocked Website",
+         "schedule": "86500s",
          "scope": 0,
          "startTime": 0.0,
          "systemIndex": 0,
@@ -506,8 +584,8 @@
          "title": "Set Merge Variables to flowData"
       },
       "7b500bb4-ddd2-4ce1-bdd3-27bfad5e3d88": {
-         "x": -104,
-         "y": 131,
+         "x": -3,
+         "y": 204,
          "title": "Event Asset Enrichment"
       },
       "e7d120b6-b410-4cef-9c0e-623475971fb3": {
@@ -534,6 +612,16 @@
          "x": 977,
          "y": -525,
          "title": "Build Correlations"
+      },
+      "4da13268-98c2-4f6a-a98c-835f18d50255": {
+         "x": -575,
+         "y": 281,
+         "title": "Sample Blocked Website"
+      },
+      "68813cd0-fd82-4f2a-bc6f-86ac81044227": {
+         "x": -372,
+         "y": 362,
+         "title": "Raise Blocked Website Events"
       }
    }
 }
