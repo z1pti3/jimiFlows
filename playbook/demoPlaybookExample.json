@@ -1,0 +1,278 @@
+{
+   "flow": [
+      {
+         "flowID": "46208604-edcc-4f0d-9b88-a8d5ed13e1e4",
+         "next": [
+            {
+               "flowID": "9a83951a-0789-40ed-8f14-460112ce2704",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "trigger",
+         "subtype": "testFireTrigger",
+         "triggerID": "60da2a497881953feddcad65"
+      },
+      {
+         "flowID": "9a83951a-0789-40ed-8f14-460112ce2704",
+         "next": [
+            {
+               "flowID": "ef8b4537-7684-41de-896f-220a6569f0c6",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "playbookStart",
+         "actionID": "60da2a607881953feddcad6a"
+      },
+      {
+         "flowID": "776ffec1-b703-484a-b99f-229e7de9370d",
+         "next": [],
+         "type": "action",
+         "subtype": "testFire",
+         "actionID": "60da2b3119943489eceb0ae9"
+      },
+      {
+         "flowID": "ef8b4537-7684-41de-896f-220a6569f0c6",
+         "next": [],
+         "type": "action",
+         "subtype": "playbookEnd",
+         "actionID": "60da2b4119943489eceb0aee"
+      },
+      {
+         "flowID": "ca976983-9b1d-4a64-a27b-6a21623bb7eb",
+         "next": [
+            {
+               "flowID": "293966f9-2387-480f-a706-f4a97996291c",
+               "logic": true,
+               "order": 0
+            },
+            {
+               "flowID": "776ffec1-b703-484a-b99f-229e7de9370d",
+               "logic": true,
+               "order": 1
+            }
+         ],
+         "type": "trigger",
+         "subtype": "playbookSearch",
+         "triggerID": "60da2b8919943489eceb0af6"
+      },
+      {
+         "flowID": "be63fdca-a822-4cd4-8123-c30e8029065b",
+         "type": "trigger",
+         "next": [
+            {
+               "flowID": "70fa2954-32a3-454f-9e60-195badb11e71",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "triggerID": "60da2bbd19943489eceb0b01"
+      },
+      {
+         "flowID": "70fa2954-32a3-454f-9e60-195badb11e71",
+         "next": [],
+         "type": "action",
+         "subtype": "playbookAdd",
+         "actionID": "60da2be019943489eceb0b07"
+      },
+      {
+         "flowID": "293966f9-2387-480f-a706-f4a97996291c",
+         "next": [],
+         "type": "action",
+         "subtype": "playbookUpdateData",
+         "actionID": "60da2cf419943489eceb0b0f"
+      }
+   ],
+   "action": {
+      "60da2a607881953feddcad6a": {
+         "className": "playbookStart",
+         "_id": "60da2a607881953feddcad6a",
+         "comment": "",
+         "createdBy": "",
+         "delayBetweenAttempts": 300,
+         "logicString": "",
+         "maxAttempts": 5,
+         "name": "Start Example Playbook",
+         "occurrence": "%%data[event][name]%%",
+         "playbookData": {
+            "host": "%%data[event][name]%%"
+         },
+         "playbookName": "example",
+         "scope": 0,
+         "sequence": 0,
+         "varDefinitions": {},
+         "version": 0.0
+      },
+      "60da2b3119943489eceb0ae9": {
+         "className": "testFire",
+         "_id": "60da2b3119943489eceb0ae9",
+         "comment": "",
+         "createdBy": "",
+         "delay": 0,
+         "group1Value1": "",
+         "group1Value2": "",
+         "lastResult": "{\"var\": {}, \"plugin\": {}, \"trigger_id\": \"60da2b8919943489eceb0af6\", \"trigger_name\": \"Get Example Playbooks\", \"event\": {\"_id\": \"60da34e4a4652361f53f974c\", \"attempt\": 0, \"endTime\": 0, \"name\": \"example\", \"occurrence\": \"host2\", \"playbookData\": {\"host\": \"host2\"}, \"result\": false, \"resultData\": {}, \"sequence\": 0, \"startTime\": 1624913124, \"version\": -1}, \"eventStats\": {\"first\": false, \"current\": 2, \"total\": 2, \"last\": true}, \"conductID\": \"60da2a3e7881953feddcad64\", \"action\": {\"result\": true, \"rc\": 1337}, \"flow_id\": \"776ffec1-b703-484a-b99f-229e7de9370d\"}",
+         "logicString": "",
+         "name": "Output CLI",
+         "password": "",
+         "rc": 0,
+         "scope": 0,
+         "varDefinitions": {}
+      },
+      "60da2b4119943489eceb0aee": {
+         "className": "playbookEnd",
+         "_id": "60da2b4119943489eceb0aee",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "End Playbook",
+         "resultData": {},
+         "scope": 0,
+         "varDefinitions": {}
+      },
+      "60da2be019943489eceb0b07": {
+         "className": "playbookAdd",
+         "_id": "60da2be019943489eceb0b07",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Add New Playbook Entry",
+         "occurrence": "%%data[event][name]%%",
+         "playbookData": {
+            "host": "%%data[event][name]%%"
+         },
+         "playbookName": "example",
+         "scope": 0,
+         "varDefinitions": {}
+      },
+      "60da2cf419943489eceb0b0f": {
+         "className": "playbookUpdateData",
+         "_id": "60da2cf419943489eceb0b0f",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Update playbookData",
+         "occurrence": "%%data[event][occurrence]%%",
+         "playbookData": {},
+         "playbookName": "example",
+         "scope": 0,
+         "varDefinitions": {}
+      }
+   },
+   "trigger": {
+      "60da2a497881953feddcad65": {
+         "className": "testFireTrigger",
+         "_id": "60da2a497881953feddcad65",
+         "attemptCount": 0,
+         "autoRestartCount": 3,
+         "clusterSet": 0,
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "events": [
+            {
+               "name": "host1"
+            }
+         ],
+         "lastCheck": 0.0,
+         "logicString": "",
+         "maxDuration": 60,
+         "name": "Test Event",
+         "schedule": "",
+         "scope": 0,
+         "startTime": 0.0,
+         "systemIndex": 0,
+         "varDefinitions": {}
+      },
+      "60da2b8919943489eceb0af6": {
+         "className": "playbookSearch",
+         "_id": "60da2b8919943489eceb0af6",
+         "attemptCount": 0,
+         "autoRestartCount": 3,
+         "clusterSet": 0,
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "lastCheck": 0.0,
+         "logicString": "",
+         "maxDuration": 60,
+         "name": "Get Example Playbooks",
+         "playbookLimit": 5,
+         "playbookName": "example",
+         "schedule": "",
+         "scope": 0,
+         "sequence": 0,
+         "startTime": 0.0,
+         "systemIndex": 0,
+         "varDefinitions": {}
+      },
+      "60da2bbd19943489eceb0b01": {
+         "className": "testFireTrigger",
+         "_id": "60da2bbd19943489eceb0b01",
+         "attemptCount": 0,
+         "autoRestartCount": 3,
+         "clusterSet": 0,
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "events": [
+            {
+               "name": "host2"
+            }
+         ],
+         "lastCheck": 0.0,
+         "logicString": "",
+         "maxDuration": 60,
+         "name": "Test Event - Additional",
+         "schedule": "",
+         "scope": 0,
+         "startTime": 0.0,
+         "systemIndex": 0,
+         "varDefinitions": {}
+      }
+   },
+   "ui": {
+      "46208604-edcc-4f0d-9b88-a8d5ed13e1e4": {
+         "x": -405,
+         "y": -253,
+         "title": "Test Event"
+      },
+      "9a83951a-0789-40ed-8f14-460112ce2704": {
+         "x": -165,
+         "y": -251,
+         "title": "Start Example Playbook"
+      },
+      "776ffec1-b703-484a-b99f-229e7de9370d": {
+         "x": -148,
+         "y": -95,
+         "title": "Output CLI"
+      },
+      "ef8b4537-7684-41de-896f-220a6569f0c6": {
+         "x": 237,
+         "y": -252,
+         "title": "End Playbook"
+      },
+      "ca976983-9b1d-4a64-a27b-6a21623bb7eb": {
+         "x": -395,
+         "y": -16,
+         "title": "Get Example Playbooks"
+      },
+      "be63fdca-a822-4cd4-8123-c30e8029065b": {
+         "x": -395,
+         "y": 182,
+         "title": "Test Event - Additional"
+      },
+      "70fa2954-32a3-454f-9e60-195badb11e71": {
+         "x": -145,
+         "y": 182,
+         "title": "Add New Playbook Entry"
+      },
+      "293966f9-2387-480f-a706-f4a97996291c": {
+         "x": -150,
+         "y": -17,
+         "title": "Update playbookData"
+      }
+   }
+}
