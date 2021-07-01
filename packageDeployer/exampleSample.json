@@ -1,0 +1,271 @@
+{
+   "flow": [
+      {
+         "flowID": "258fee52-6b6e-4547-ac27-14ad06846e34",
+         "next": [
+            {
+               "flowID": "0c3288d8-55f8-4773-8e88-339e26ce251f",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "trigger",
+         "subtype": "playbookSearch",
+         "triggerID": "60de26a97649dbd898d94849"
+      },
+      {
+         "flowID": "6df6473a-9dfa-476b-95cf-adc8c4e5419e",
+         "next": [
+            {
+               "flowID": "0d559b04-3dc2-41f5-ad97-a73dbb618716",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "sleep",
+         "actionID": "60de26d87649dbd898d9484e"
+      },
+      {
+         "flowID": "0d559b04-3dc2-41f5-ad97-a73dbb618716",
+         "next": [
+            {
+               "flowID": "04b5ce76-ec76-4381-acfe-ce1cb5bb3f1f",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "playbookUpdateData",
+         "actionID": "60de26f57649dbd898d94855"
+      },
+      {
+         "flowID": "0c3288d8-55f8-4773-8e88-339e26ce251f",
+         "next": [
+            {
+               "flowID": "6df6473a-9dfa-476b-95cf-adc8c4e5419e",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "playbookStart",
+         "actionID": "60de327b51ddf260f82f7104"
+      },
+      {
+         "flowID": "8d51e774-8006-4c83-8b11-ba2d35d63801",
+         "next": [],
+         "type": "action",
+         "subtype": "playbookEnd",
+         "actionID": "60de32aa51ddf260f82f710a"
+      },
+      {
+         "flowID": "04b5ce76-ec76-4381-acfe-ce1cb5bb3f1f",
+         "type": "action",
+         "actionID": "60de26d87649dbd898d9484e",
+         "next": [
+            {
+               "flowID": "f96b1963-6c4b-49e4-9c13-512cdad4889f",
+               "logic": true,
+               "order": 0
+            }
+         ]
+      },
+      {
+         "flowID": "f96b1963-6c4b-49e4-9c13-512cdad4889f",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "483fcc2e-5a2b-40e8-aa8b-be511ddb29b1",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60de32db51ddf260f82f7122"
+      },
+      {
+         "flowID": "483fcc2e-5a2b-40e8-aa8b-be511ddb29b1",
+         "type": "action",
+         "actionID": "60de26d87649dbd898d9484e",
+         "next": [
+            {
+               "flowID": "84a52f7c-afe6-4147-a00f-87c82663fc45",
+               "logic": true,
+               "order": 0
+            }
+         ]
+      },
+      {
+         "flowID": "84a52f7c-afe6-4147-a00f-87c82663fc45",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "8d51e774-8006-4c83-8b11-ba2d35d63801",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60de32f151ddf260f82f712b"
+      }
+   ],
+   "action": {
+      "60de26d87649dbd898d9484e": {
+         "className": "sleep",
+         "_id": "60de26d87649dbd898d9484e",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Sleep for 10 seconds",
+         "scope": 0,
+         "sleepFor": 10,
+         "varDefinitions": {}
+      },
+      "60de26f57649dbd898d94855": {
+         "className": "playbookUpdateData",
+         "_id": "60de26f57649dbd898d94855",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Started",
+         "occurrence": "%%data[event][occurrence]%%",
+         "playbookData": {
+            "asset_id": "%%data[event][playbookData][asset_id]%%",
+            "status": "Started"
+         },
+         "playbookName": "%%data[event][name]%%",
+         "scope": 0,
+         "varDefinitions": {}
+      },
+      "60de327b51ddf260f82f7104": {
+         "className": "playbookStart",
+         "_id": "60de327b51ddf260f82f7104",
+         "comment": "",
+         "createdBy": "",
+         "delayBetweenAttempts": 1,
+         "logicString": "",
+         "maxAttempts": 10,
+         "name": "Playbook Start",
+         "occurrence": "%%data[event][occurrence]%%",
+         "playbookData": {},
+         "playbookName": "%%data[event][name]%%",
+         "scope": 0,
+         "sequence": 0,
+         "varDefinitions": {},
+         "version": 0.0
+      },
+      "60de32aa51ddf260f82f710a": {
+         "className": "playbookEnd",
+         "_id": "60de32aa51ddf260f82f710a",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Playbook Completed",
+         "resultData": {},
+         "scope": 0,
+         "varDefinitions": {}
+      },
+      "60de32db51ddf260f82f7122": {
+         "className": "playbookUpdateData",
+         "_id": "60de32db51ddf260f82f7122",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Downloading",
+         "occurrence": "%%data[event][occurrence]%%",
+         "playbookData": {
+            "asset_id": "%%data[event][playbookData][asset_id]%%",
+            "status": "Downloading"
+         },
+         "playbookName": "%%data[event][name]%%",
+         "scope": 0,
+         "varDefinitions": {}
+      },
+      "60de32f151ddf260f82f712b": {
+         "className": "playbookUpdateData",
+         "_id": "60de32f151ddf260f82f712b",
+         "comment": "",
+         "createdBy": "",
+         "logicString": "",
+         "name": "Installing",
+         "occurrence": "%%data[event][occurrence]%%",
+         "playbookData": {
+            "asset_id": "%%data[event][playbookData][asset_id]%%",
+            "status": "Installing"
+         },
+         "playbookName": "%%data[event][name]%%",
+         "scope": 0,
+         "varDefinitions": {}
+      }
+   },
+   "trigger": {
+      "60de26a97649dbd898d94849": {
+         "className": "playbookSearch",
+         "_id": "60de26a97649dbd898d94849",
+         "attemptCount": 0,
+         "autoRestartCount": 3,
+         "clusterSet": 0,
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "lastCheck": 1625177108.4501672,
+         "logicString": "",
+         "maxDuration": 60,
+         "name": "Package Zoom",
+         "playbookLimit": 5,
+         "playbookName": "package_zoom",
+         "schedule": "10-15s",
+         "scope": 0,
+         "sequence": 0,
+         "startTime": 0.0,
+         "systemIndex": 0,
+         "varDefinitions": {}
+      }
+   },
+   "ui": {
+      "258fee52-6b6e-4547-ac27-14ad06846e34": {
+         "x": -451,
+         "y": -272,
+         "title": "Package Zoom"
+      },
+      "6df6473a-9dfa-476b-95cf-adc8c4e5419e": {
+         "x": -98,
+         "y": -182,
+         "title": "Sleep for 10 seconds"
+      },
+      "0d559b04-3dc2-41f5-ad97-a73dbb618716": {
+         "x": -96,
+         "y": -85,
+         "title": "Started"
+      },
+      "0c3288d8-55f8-4773-8e88-339e26ce251f": {
+         "x": -302,
+         "y": -183,
+         "title": "Playbook Start"
+      },
+      "8d51e774-8006-4c83-8b11-ba2d35d63801": {
+         "x": 177,
+         "y": 334,
+         "title": "Playbook Completed"
+      },
+      "04b5ce76-ec76-4381-acfe-ce1cb5bb3f1f": {
+         "x": -95,
+         "y": 10,
+         "title": "Sleep for 10 seconds"
+      },
+      "f96b1963-6c4b-49e4-9c13-512cdad4889f": {
+         "x": -91,
+         "y": 116,
+         "title": "Downloading"
+      },
+      "483fcc2e-5a2b-40e8-aa8b-be511ddb29b1": {
+         "x": -88,
+         "y": 231,
+         "title": "Sleep for 10 seconds"
+      },
+      "84a52f7c-afe6-4147-a00f-87c82663fc45": {
+         "x": -89,
+         "y": 335,
+         "title": "Installing"
+      }
+   }
+}
