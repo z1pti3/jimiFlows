@@ -1,6 +1,6 @@
 # jimiFlows
 
-Repository containing various jimiFlows that can be imported into your deployment.
+Repository containing various jimiFlows that can be imported into your deployment using the conduct import button on an opened conduct.
 
 ## Install
 
