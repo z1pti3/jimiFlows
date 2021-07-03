@@ -1,0 +1,10 @@
+{
+   "description" : "",
+   "requirements" : {
+      "jimi_min_version" : null,
+      "jimi_max_version" : null,
+      "plugins" : ["event"]
+   },
+   "felids" : {
+   }
+}
