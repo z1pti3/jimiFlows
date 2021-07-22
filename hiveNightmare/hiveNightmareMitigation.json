@@ -157,12 +157,12 @@
          "next": [
             {
                "flowID": "f8fd2130-f3d4-4463-a92d-79ddf9e24c99",
-               "logic": false,
+               "logic": true,
                "order": 0
             },
             {
                "flowID": "6245150a-683f-4491-a877-821b3f958f9d",
-               "logic": true,
+               "logic": false,
                "order": 0
             }
          ]
