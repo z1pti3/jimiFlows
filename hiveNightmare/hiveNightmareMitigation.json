@@ -1,0 +1,1063 @@
+{
+   "flow": [
+      {
+         "flowID": "9f7c99e9-736c-494f-a9ae-97f931649e7c",
+         "type": "action",
+         "actionID": "5f85b24f192c0178a17089b5",
+         "next": [
+            {
+               "flowID": "2e365f68-f51f-4279-8b71-58913f3988e9",
+               "logic": true,
+               "order": 0
+            }
+         ]
+      },
+      {
+         "flowID": "4dd2a399-f0c2-4c76-ac0b-d259a886c6d3",
+         "next": [
+            {
+               "flowID": "c29bfcf0-e059-403d-9f0f-0658a9def5fd",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "trigger",
+         "subtype": "testFireTrigger",
+         "triggerID": "60f91c3cf3893fb50c319f56"
+      },
+      {
+         "flowID": "d3a0b34f-3c30-4de2-942d-5b1d94ca3847",
+         "next": [
+            {
+               "flowID": "4756893b-d2a3-40c2-bdab-162cc9b4ff43",
+               "logic": true,
+               "order": 0
+            },
+            {
+               "flowID": "431607a1-e90f-4987-8d31-460c161693b1",
+               "logic": false,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "remoteCommand",
+         "actionID": "60f91d02f3893fb50c319f59"
+      },
+      {
+         "flowID": "2e365f68-f51f-4279-8b71-58913f3988e9",
+         "type": "action",
+         "actionID": "5f3ceef612f0b997783060b0",
+         "next": [
+            {
+               "flowID": "4a8908e1-cdd3-4747-b6bd-095d8a6bcd69",
+               "logic": true,
+               "order": 0
+            },
+            {
+               "flowID": "c70afcd2-f4fe-4345-a615-8d70bca7bb31",
+               "logic": false,
+               "order": 0
+            }
+         ]
+      },
+      {
+         "flowID": "4a8908e1-cdd3-4747-b6bd-095d8a6bcd69",
+         "type": "action",
+         "actionID": "5f3cef42fee4e3fc744ddc88",
+         "next": [
+            {
+               "flowID": "ff03a3db-e45b-429a-80c3-0f2f8c3c6cf5",
+               "logic": false,
+               "order": 0
+            },
+            {
+               "flowID": "89043e16-f289-4b98-b165-9142d8f1a9dd",
+               "logic": true,
+               "order": 0
+            }
+         ]
+      },
+      {
+         "flowID": "e7869edb-ee4e-4255-a444-50edd9da8e11",
+         "next": [
+            {
+               "flowID": "9f7c99e9-736c-494f-a9ae-97f931649e7c",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "playbookStart",
+         "actionID": "60f920fcf3893fb50c319f5f"
+      },
+      {
+         "flowID": "063e521c-4eef-46ef-8ca7-371967aecf93",
+         "next": [
+            {
+               "flowID": "e7869edb-ee4e-4255-a444-50edd9da8e11",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "forEach",
+         "actionID": "60f9267ff3893fb50c319f61"
+      },
+      {
+         "flowID": "c29bfcf0-e059-403d-9f0f-0658a9def5fd",
+         "next": [
+            {
+               "flowID": "063e521c-4eef-46ef-8ca7-371967aecf93",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "assetSearch",
+         "actionID": "60f92cb0f3893fb50c319f63"
+      },
+      {
+         "flowID": "4756893b-d2a3-40c2-bdab-162cc9b4ff43",
+         "next": [
+            {
+               "flowID": "c7aa9e1a-5085-43fb-8aae-0b2604e8eaea",
+               "logic": true,
+               "order": 0
+            },
+            {
+               "flowID": "24fa21cc-fa31-4c8b-b2c1-ac3dddec63ad",
+               "logic": false,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "actionID": "60f92f92f3893fb50c319f66"
+      },
+      {
+         "flowID": "c7aa9e1a-5085-43fb-8aae-0b2604e8eaea",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "f8fd2130-f3d4-4463-a92d-79ddf9e24c99",
+               "logic": false,
+               "order": 0
+            },
+            {
+               "flowID": "135337c4-0d2e-403b-97e2-a9db1414b3cb",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60f93883f3893fb50c319f68"
+      },
+      {
+         "flowID": "5ff0c7f2-3cca-4797-b0c8-c8af2ff4b73d",
+         "type": "action",
+         "actionID": "60f92f92f3893fb50c319f66",
+         "next": [
+            {
+               "flowID": "f8fd2130-f3d4-4463-a92d-79ddf9e24c99",
+               "logic": true,
+               "order": 0
+            },
+            {
+               "flowID": "6245150a-683f-4491-a877-821b3f958f9d",
+               "logic": true,
+               "order": 0
+            }
+         ]
+      },
+      {
+         "flowID": "c835c9c3-e20c-4474-b706-3d7228c73b5f",
+         "next": [],
+         "type": "action",
+         "subtype": "playbookEnd",
+         "actionID": "60f938f8f3893fb50c319f6d"
+      },
+      {
+         "flowID": "f8fd2130-f3d4-4463-a92d-79ddf9e24c99",
+         "type": "action",
+         "next": [],
+         "actionID": "60f93945f3893fb50c319f6f"
+      },
+      {
+         "flowID": "431607a1-e90f-4987-8d31-460c161693b1",
+         "type": "action",
+         "next": [],
+         "actionID": "60f9399cf3893fb50c319f76"
+      },
+      {
+         "flowID": "135337c4-0d2e-403b-97e2-a9db1414b3cb",
+         "type": "action",
+         "actionID": "60f91d02f3893fb50c319f59",
+         "next": [
+            {
+               "flowID": "5ff0c7f2-3cca-4797-b0c8-c8af2ff4b73d",
+               "logic": true,
+               "order": 0
+            },
+            {
+               "flowID": "431607a1-e90f-4987-8d31-460c161693b1",
+               "logic": false,
+               "order": 0
+            }
+         ]
+      },
+      {
+         "flowID": "ff03a3db-e45b-429a-80c3-0f2f8c3c6cf5",
+         "type": "action",
+         "actionID": "5f3d0b18fee4e3fc744ddc8d",
+         "next": []
+      },
+      {
+         "flowID": "c70afcd2-f4fe-4345-a615-8d70bca7bb31",
+         "type": "action",
+         "actionID": "5f3d0d09fee4e3fc744ddc91",
+         "next": []
+      },
+      {
+         "flowID": "24fa21cc-fa31-4c8b-b2c1-ac3dddec63ad",
+         "type": "action",
+         "next": [],
+         "actionID": "60f93a76f3893fb50c319f7d"
+      },
+      {
+         "flowID": "89043e16-f289-4b98-b165-9142d8f1a9dd",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "bcc6362f-18f2-4d91-a143-eee26948e195",
+               "logic": false,
+               "order": 0
+            },
+            {
+               "flowID": "4d105e32-bfbf-4620-a6a0-1fe9e4d628b0",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60f941caf3893fb50c319f8a"
+      },
+      {
+         "flowID": "bcc6362f-18f2-4d91-a143-eee26948e195",
+         "type": "action",
+         "next": [],
+         "actionID": "60f941e9f3893fb50c319f8c"
+      },
+      {
+         "flowID": "4d105e32-bfbf-4620-a6a0-1fe9e4d628b0",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "652c88f5-8fdc-41b7-9398-2bb5a155c159",
+               "logic": false,
+               "order": 0
+            },
+            {
+               "flowID": "d3a0b34f-3c30-4de2-942d-5b1d94ca3847",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60f94225f3893fb50c319f8e"
+      },
+      {
+         "flowID": "652c88f5-8fdc-41b7-9398-2bb5a155c159",
+         "type": "action",
+         "next": [],
+         "actionID": "60f9426cf3893fb50c319f92"
+      },
+      {
+         "flowID": "6245150a-683f-4491-a877-821b3f958f9d",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "f664a3a7-8ee2-4640-8640-585cbcb1b611",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60f987c7f3893fb50c319fa7"
+      },
+      {
+         "flowID": "f664a3a7-8ee2-4640-8640-585cbcb1b611",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "264244f4-699a-4911-8d7b-9df55609ce3e",
+               "logic": true,
+               "order": 0
+            },
+            {
+               "flowID": "68eea5f4-1e7d-4ad8-9dca-b1ff8bd4a373",
+               "logic": false,
+               "order": 0
+            }
+         ],
+         "actionID": "60f98802f3893fb50c319fa9"
+      },
+      {
+         "flowID": "264244f4-699a-4911-8d7b-9df55609ce3e",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "d7c4bc85-75a9-4efa-8f2e-c6424f5a9c7e",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60f98896f3893fb50c319fab"
+      },
+      {
+         "flowID": "d7c4bc85-75a9-4efa-8f2e-c6424f5a9c7e",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "c835c9c3-e20c-4474-b706-3d7228c73b5f",
+               "logic": true,
+               "order": 0
+            },
+            {
+               "flowID": "d551604a-1eec-439d-8f3c-7ead8bcd8ca2",
+               "logic": false,
+               "order": 0
+            }
+         ],
+         "actionID": "60f98a4df3893fb50c319fae"
+      },
+      {
+         "flowID": "68eea5f4-1e7d-4ad8-9dca-b1ff8bd4a373",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "7a603ef9-7587-421a-afbd-12e970ba6642",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "60f98b54f3893fb50c319fb0"
+      },
+      {
+         "flowID": "dcc33435-9e08-4abd-8f98-9db899e52d13",
+         "type": "action",
+         "actionID": "60f98802f3893fb50c319fa9",
+         "next": [
+            {
+               "flowID": "264244f4-699a-4911-8d7b-9df55609ce3e",
+               "logic": true,
+               "order": 0
+            },
+            {
+               "flowID": "ea16479e-93ba-454b-b19f-19f44a602d09",
+               "logic": false,
+               "order": 0
+            }
+         ]
+      },
+      {
+         "flowID": "7a603ef9-7587-421a-afbd-12e970ba6642",
+         "type": "action",
+         "actionID": "60f987c7f3893fb50c319fa7",
+         "next": [
+            {
+               "flowID": "dcc33435-9e08-4abd-8f98-9db899e52d13",
+               "logic": true,
+               "order": 0
+            }
+         ]
+      },
+      {
+         "flowID": "ea16479e-93ba-454b-b19f-19f44a602d09",
+         "type": "action",
+         "actionID": "60f93945f3893fb50c319f6f",
+         "next": []
+      },
+      {
+         "flowID": "d551604a-1eec-439d-8f3c-7ead8bcd8ca2",
+         "type": "action",
+         "actionID": "60f98b54f3893fb50c319fb0",
+         "next": [
+            {
+               "flowID": "427bb362-f3f3-48df-9efa-e56fa5f9d138",
+               "logic": true,
+               "order": 0
+            }
+         ]
+      },
+      {
+         "flowID": "427bb362-f3f3-48df-9efa-e56fa5f9d138",
+         "type": "action",
+         "actionID": "60f987c7f3893fb50c319fa7",
+         "next": [
+            {
+               "flowID": "dccd20ed-59e8-4776-b00a-a1f9cd0fc88d",
+               "logic": true,
+               "order": 0
+            }
+         ]
+      },
+      {
+         "flowID": "dccd20ed-59e8-4776-b00a-a1f9cd0fc88d",
+         "type": "action",
+         "actionID": "60f98802f3893fb50c319fa9",
+         "next": [
+            {
+               "flowID": "c835c9c3-e20c-4474-b706-3d7228c73b5f",
+               "logic": true,
+               "order": 0
+            },
+            {
+               "flowID": "ea16479e-93ba-454b-b19f-19f44a602d09",
+               "logic": false,
+               "order": 0
+            }
+         ]
+      }
+   ],
+   "action": {
+      "5f85b24f192c0178a17089b5": {
+         "className": "remoteConnectWindows",
+         "_id": "5f85b24f192c0178a17089b5",
+         "comment": "",
+         "createdBy": "",
+         "enable_smb": true,
+         "enabled": true,
+         "errorContinue": false,
+         "host": "%%data[event][fields][ip]%%",
+         "log": false,
+         "logicString": "",
+         "name": "Windows Host Connect Host",
+         "password": "",
+         "scope": 2,
+         "systemCrashHandler": false,
+         "user": "",
+         "varDefinitions": {}
+      },
+      "60f91d02f3893fb50c319f59": {
+         "className": "remoteCommand",
+         "_id": "60f91d02f3893fb50c319f59",
+         "arguments": [],
+         "command": "icacls %windir%\\system32\\config\\SAM",
+         "comment": "",
+         "createdBy": "",
+         "elevate": true,
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "Check Current ACLs",
+         "runAs": "",
+         "scope": 0,
+         "systemCrashHandler": false,
+         "timeout": 60,
+         "varDefinitions": {}
+      },
+      "5f3ceef612f0b997783060b0": {
+         "className": "remoteCommand",
+         "_id": "5f3ceef612f0b997783060b0",
+         "arguments": [],
+         "command": "hostname",
+         "comment": "",
+         "createdBy": "",
+         "elevate": false,
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "Get Windows Hostname",
+         "runAs": "",
+         "scope": 2,
+         "systemCrashHandler": false,
+         "timeout": 0,
+         "varDefinitions": {
+            "targetHostname": {
+               "value": "%%action[data]%%"
+            }
+         }
+      },
+      "5f3cef42fee4e3fc744ddc88": {
+         "className": "action",
+         "_id": "5f3cef42fee4e3fc744ddc88",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "if strLower(data[var][targetHostname]) == strLower(data[event][name])",
+         "name": "Check Hostname Matches",
+         "scope": 2,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "60f920fcf3893fb50c319f5f": {
+         "className": "playbookStart",
+         "_id": "60f920fcf3893fb50c319f5f",
+         "alwaysRun": false,
+         "comment": "",
+         "createdBy": "",
+         "delayBetweenAttempts": 300,
+         "enabled": true,
+         "errorContinue": false,
+         "keepHistory": false,
+         "log": false,
+         "logicString": "",
+         "maxAttempts": 50,
+         "name": "Start HiveNightmare Playbook",
+         "occurrence": "%%data[event][name]%%",
+         "playbookData": {},
+         "playbookName": "HiveNightmare ACL Fix",
+         "scope": 0,
+         "sequence": 0,
+         "systemCrashHandler": false,
+         "varDefinitions": {},
+         "version": 1.0
+      },
+      "60f9267ff3893fb50c319f61": {
+         "className": "forEach",
+         "_id": "60f9267ff3893fb50c319f61",
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "events": [],
+         "eventsField": "%%data[action][events]%%",
+         "limit": 0,
+         "log": false,
+         "logicString": "",
+         "manual": false,
+         "mergeEvents": true,
+         "name": "For Each Host Found",
+         "scope": 0,
+         "skip": 0,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "60f92cb0f3893fb50c319f63": {
+         "className": "assetSearch",
+         "_id": "60f92cb0f3893fb50c319f63",
+         "ascending": false,
+         "cache": false,
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "fields": [],
+         "flattenFields": [],
+         "log": false,
+         "logicString": "",
+         "name": "Find Active Windows 10 Devices",
+         "order_by": "",
+         "return_one": false,
+         "scope": 0,
+         "search": {
+            "assetType": "computer",
+            "fields.operatingSystem": {
+               "$regex": "windows 10"
+            },
+            "lastUpdateTime": {
+               "$gt": "%%sum(now(),-3600)%%"
+            }
+         },
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "60f92f92f3893fb50c319f66": {
+         "className": "action",
+         "_id": "60f92f92f3893fb50c319f66",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "if \"BUILTIN\\Users:(I)(RX)\" in data[action][data]",
+         "name": "If BuiltInUsers can Read SAM",
+         "scope": 0,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "60f93883f3893fb50c319f68": {
+         "className": "remoteCommand",
+         "_id": "60f93883f3893fb50c319f68",
+         "arguments": [],
+         "command": "icacls %windir%\\system32\\config\\*.* /inheritance:e",
+         "comment": "",
+         "createdBy": "",
+         "elevate": true,
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "Remove User ACL from configs",
+         "runAs": "",
+         "scope": 0,
+         "systemCrashHandler": false,
+         "timeout": 60,
+         "varDefinitions": {}
+      },
+      "60f938f8f3893fb50c319f6d": {
+         "className": "playbookEnd",
+         "_id": "60f938f8f3893fb50c319f6d",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "End Playbook on Mitigation Applied",
+         "result": true,
+         "resultData": {
+            "success": "Mitigations have been applied"
+         },
+         "scope": 0,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "60f93945f3893fb50c319f6f": {
+         "className": "playbookEnd",
+         "_id": "60f93945f3893fb50c319f6f",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "End Playbook on Mitigation Failure",
+         "result": false,
+         "resultData": {
+            "error": "Mitigations did not apply"
+         },
+         "scope": 0,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "60f9399cf3893fb50c319f76": {
+         "className": "playbookEnd",
+         "_id": "60f9399cf3893fb50c319f76",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "End Playbook on Failure to Read ACL",
+         "result": false,
+         "resultData": {
+            "error": "Could not read current ACL",
+            "output": "%%data[action][data]%%"
+         },
+         "scope": 0,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "5f3d0b18fee4e3fc744ddc8d": {
+         "className": "playbookEnd",
+         "_id": "5f3d0b18fee4e3fc744ddc8d",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": true,
+         "logicString": "",
+         "name": "End Playbook on Wrong Hostname",
+         "result": false,
+         "resultData": {
+            "error": "hostname does not match",
+            "hostFound": "%%data[var][targetHostname]%%"
+         },
+         "scope": 2,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "5f3d0d09fee4e3fc744ddc91": {
+         "className": "playbookEnd",
+         "_id": "5f3d0d09fee4e3fc744ddc91",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": true,
+         "logicString": "",
+         "name": "End Playbook on Host Connection Issue",
+         "result": false,
+         "resultData": {
+            "error": "cannot connect to host %%data[event][name]%%"
+         },
+         "scope": 2,
+         "systemCrashHandler": false,
+         "varDefinitions": {
+            "content": {
+               "value": "Failed to connect to host"
+            }
+         }
+      },
+      "60f93a76f3893fb50c319f7d": {
+         "className": "playbookEnd",
+         "_id": "60f93a76f3893fb50c319f7d",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "End Playbook on Users Unable to Read ACL",
+         "result": true,
+         "resultData": {
+            "success": "Users cannot read ACL"
+         },
+         "scope": 0,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "60f941caf3893fb50c319f8a": {
+         "className": "remoteCommand",
+         "_id": "60f941caf3893fb50c319f8a",
+         "arguments": [],
+         "command": "systeminfo | findstr /B /C:\"OS Name\" /C:\"OS Version\"",
+         "comment": "",
+         "createdBy": "",
+         "elevate": true,
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "Get OS Version",
+         "runAs": "",
+         "scope": 0,
+         "systemCrashHandler": false,
+         "timeout": 60,
+         "varDefinitions": {}
+      },
+      "60f941e9f3893fb50c319f8c": {
+         "className": "playbookEnd",
+         "_id": "60f941e9f3893fb50c319f8c",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": true,
+         "logicString": "",
+         "name": "End Playbook on Get OS Version Failure",
+         "result": false,
+         "resultData": {
+            "error": "Could not get OS version",
+            "output": "%%data[action][data]%%"
+         },
+         "scope": 2,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "60f94225f3893fb50c319f8e": {
+         "className": "action",
+         "_id": "60f94225f3893fb50c319f8e",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "if \"Windows 10\" in data[action][data]",
+         "name": "Check OS is Windows 10",
+         "scope": 2,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "60f9426cf3893fb50c319f92": {
+         "className": "playbookEnd",
+         "_id": "60f9426cf3893fb50c319f92",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "End Playbook on Wrong OS",
+         "result": true,
+         "resultData": {
+            "success": "Host is not Windows 10 OS"
+         },
+         "scope": 0,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "60f987c7f3893fb50c319fa7": {
+         "className": "remoteCommand",
+         "_id": "60f987c7f3893fb50c319fa7",
+         "arguments": [],
+         "command": "vssadmin list shadows",
+         "comment": "",
+         "createdBy": "",
+         "elevate": true,
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "Check For Shadows",
+         "runAs": "",
+         "scope": 0,
+         "systemCrashHandler": false,
+         "timeout": 60,
+         "varDefinitions": {}
+      },
+      "60f98802f3893fb50c319fa9": {
+         "className": "action",
+         "_id": "60f98802f3893fb50c319fa9",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "if \"No items found that satisfy the query.\" in data[action][data]",
+         "name": "If no shadows found",
+         "scope": 0,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "60f98896f3893fb50c319fab": {
+         "className": "remoteCommand",
+         "_id": "60f98896f3893fb50c319fab",
+         "arguments": [],
+         "command": "powershell -command Get-ComputerRestorePoint",
+         "comment": "",
+         "createdBy": "",
+         "elevate": true,
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "Check for Restore Points",
+         "runAs": "",
+         "scope": 0,
+         "systemCrashHandler": false,
+         "timeout": 60,
+         "varDefinitions": {}
+      },
+      "60f98a4df3893fb50c319fae": {
+         "className": "action",
+         "_id": "60f98a4df3893fb50c319fae",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "if \"CreationTime\" not in data[action][data]",
+         "name": "If no restore points found",
+         "scope": 0,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "60f98b54f3893fb50c319fb0": {
+         "className": "remoteCommand",
+         "_id": "60f98b54f3893fb50c319fb0",
+         "arguments": [],
+         "command": "vssadmin delete shadows /all /quiet",
+         "comment": "",
+         "createdBy": "",
+         "elevate": true,
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "Delete Shadow Copies",
+         "runAs": "",
+         "scope": 0,
+         "systemCrashHandler": false,
+         "timeout": 60,
+         "varDefinitions": {}
+      }
+   },
+   "trigger": {
+      "60f91c3cf3893fb50c319f56": {
+         "className": "testFireTrigger",
+         "_id": "60f91c3cf3893fb50c319f56",
+         "attemptCount": 0,
+         "autoRestartCount": 3,
+         "clusterSet": 0,
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "enabled": false,
+         "events": [
+            1
+         ],
+         "failOnActionFailure": true,
+         "lastCheck": 0.0,
+         "log": false,
+         "logicString": "",
+         "maxDuration": 60,
+         "name": "HiveNightmare Mitigation Application Flow",
+         "schedule": "",
+         "scope": 0,
+         "startTime": 0.0,
+         "systemIndex": 0,
+         "threaded": false,
+         "varDefinitions": {}
+      }
+   },
+   "ui": {
+      "9f7c99e9-736c-494f-a9ae-97f931649e7c": {
+         "x": -286,
+         "y": 1057,
+         "title": "Windows Host Connect Host"
+      },
+      "4dd2a399-f0c2-4c76-ac0b-d259a886c6d3": {
+         "x": -881,
+         "y": 889,
+         "title": "HiveNightmare Mitigation Application Flow"
+      },
+      "d3a0b34f-3c30-4de2-942d-5b1d94ca3847": {
+         "x": 246,
+         "y": 1316,
+         "title": "Check Current ACLs"
+      },
+      "2e365f68-f51f-4279-8b71-58913f3988e9": {
+         "x": -6,
+         "y": 1056,
+         "title": "Get Windows Hostname"
+      },
+      "4a8908e1-cdd3-4747-b6bd-095d8a6bcd69": {
+         "x": 244,
+         "y": 1059,
+         "title": "Check Hostname Matches"
+      },
+      "e7869edb-ee4e-4255-a444-50edd9da8e11": {
+         "x": -287,
+         "y": 976,
+         "title": "Start HiveNightmare Playbook"
+      },
+      "063e521c-4eef-46ef-8ca7-371967aecf93": {
+         "x": -288,
+         "y": 891,
+         "title": "For Each Host Found"
+      },
+      "c29bfcf0-e059-403d-9f0f-0658a9def5fd": {
+         "x": -545,
+         "y": 889,
+         "title": "Find Active Windows 10 Devices"
+      },
+      "4756893b-d2a3-40c2-bdab-162cc9b4ff43": {
+         "x": 246,
+         "y": 1398,
+         "title": "If BuiltInUsers can Read SAM"
+      },
+      "c7aa9e1a-5085-43fb-8aae-0b2604e8eaea": {
+         "x": 519,
+         "y": 1397,
+         "title": "Remove User ACL from configs"
+      },
+      "5ff0c7f2-3cca-4797-b0c8-c8af2ff4b73d": {
+         "x": 1042,
+         "y": 1394,
+         "title": "If BuiltInUsers can Read SAM"
+      },
+      "c835c9c3-e20c-4474-b706-3d7228c73b5f": {
+         "x": 2242,
+         "y": 1394,
+         "title": "End Playbook on Mitigation Applied"
+      },
+      "f8fd2130-f3d4-4463-a92d-79ddf9e24c99": {
+         "x": 762,
+         "y": 1537,
+         "title": "End Playbook on Mitigation Failure"
+      },
+      "431607a1-e90f-4987-8d31-460c161693b1": {
+         "x": 772,
+         "y": 1315,
+         "title": "End Playbook on Failure to Read ACL"
+      },
+      "135337c4-0d2e-403b-97e2-a9db1414b3cb": {
+         "x": 772,
+         "y": 1397,
+         "title": "Check Current ACLs"
+      },
+      "ff03a3db-e45b-429a-80c3-0f2f8c3c6cf5": {
+         "x": 538,
+         "y": 1059,
+         "title": "End Playbook on Wrong Hostname"
+      },
+      "c70afcd2-f4fe-4345-a615-8d70bca7bb31": {
+         "x": -5,
+         "y": 1143,
+         "title": "End Playbook on Host Connection Issue"
+      },
+      "24fa21cc-fa31-4c8b-b2c1-ac3dddec63ad": {
+         "x": 246,
+         "y": 1488,
+         "title": "End Playbook on Users Unable to Read ACL"
+      },
+      "89043e16-f289-4b98-b165-9142d8f1a9dd": {
+         "x": 244,
+         "y": 1149,
+         "title": "Get OS Version"
+      },
+      "bcc6362f-18f2-4d91-a143-eee26948e195": {
+         "x": 530,
+         "y": 1150,
+         "title": "End Playbook on Get OS Version Failure"
+      },
+      "4d105e32-bfbf-4620-a6a0-1fe9e4d628b0": {
+         "x": 244,
+         "y": 1234,
+         "title": "Check OS is Windows 10"
+      },
+      "652c88f5-8fdc-41b7-9398-2bb5a155c159": {
+         "x": 521,
+         "y": 1232,
+         "title": "End Playbook on Wrong OS"
+      },
+      "6245150a-683f-4491-a877-821b3f958f9d": {
+         "x": 1278,
+         "y": 1394,
+         "title": "Check For Shadows"
+      },
+      "f664a3a7-8ee2-4640-8640-585cbcb1b611": {
+         "x": 1508,
+         "y": 1395,
+         "title": "If no shadows found"
+      },
+      "264244f4-699a-4911-8d7b-9df55609ce3e": {
+         "x": 1714,
+         "y": 1395,
+         "title": "Check for Restore Points"
+      },
+      "d7c4bc85-75a9-4efa-8f2e-c6424f5a9c7e": {
+         "x": 1952,
+         "y": 1394,
+         "title": "If no restore points found"
+      },
+      "68eea5f4-1e7d-4ad8-9dca-b1ff8bd4a373": {
+         "x": 1508,
+         "y": 1495,
+         "title": "Delete Shadow Copies"
+      },
+      "dcc33435-9e08-4abd-8f98-9db899e52d13": {
+         "x": 1715,
+         "y": 1584,
+         "title": "If no shadows found"
+      },
+      "7a603ef9-7587-421a-afbd-12e970ba6642": {
+         "x": 1509,
+         "y": 1587,
+         "title": "Check For Shadows"
+      },
+      "ea16479e-93ba-454b-b19f-19f44a602d09": {
+         "x": 1968,
+         "y": 1673,
+         "title": "End Playbook on Mitigation Failure"
+      },
+      "d551604a-1eec-439d-8f3c-7ead8bcd8ca2": {
+         "x": 1953,
+         "y": 1486,
+         "title": "Delete Shadow Copies"
+      },
+      "427bb362-f3f3-48df-9efa-e56fa5f9d138": {
+         "x": 1953,
+         "y": 1580,
+         "title": "Check For Shadows"
+      },
+      "dccd20ed-59e8-4776-b00a-a1f9cd0fc88d": {
+         "x": 2166,
+         "y": 1577,
+         "title": "If no shadows found"
+      }
+   }
+}
