@@ -157,7 +157,7 @@
          "next": [
             {
                "flowID": "f8fd2130-f3d4-4463-a92d-79ddf9e24c99",
-               "logic": true,
+               "logic": false,
                "order": 0
             },
             {
