@@ -1,0 +1,10 @@
+{
+   "description" : "A playbook for actively applying the Microsoft recommended mitigations for HiveNightmare, a new EOP Zero Day. Based on https://nakedsecurity.sophos.com/2021/07/21/windows-hivenightmare-bug-could-leak-passwords-heres-what-to-do/",
+   "requirements" : {
+      "jimi_min_version" : 2.1,
+      "jimi_max_version" : null,
+      "plugins" : ["asset","playbook","remote"]
+   },
+   "fields" : {
+   }
+}
