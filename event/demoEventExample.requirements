@@ -6,5 +6,8 @@
       "plugins" : ["event"]
    },
    "felids" : {
+      "trigger_id" : {
+         "description" : "Trigger ID of the 'Event Asset Lookup' action once created for subFlow."
+       }
    }
 }
