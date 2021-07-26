@@ -321,7 +321,7 @@
          "logicString": "",
          "name": "Event Asset Enrichment",
          "scope": 0,
-         "triggerID": "60d8bf80d88610f0d35faaf3",
+         "triggerID": "<trigger_id>",
          "varDefinitions": {}
       },
       "60d8d121d88610f0d35fab8c": {
