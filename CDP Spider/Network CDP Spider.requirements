@@ -1,0 +1,19 @@
+{
+   "description" : "Cisco based CDP spider from a given swtich to map a network",
+   "requirements" : {
+      "jimi_min_version" : null,
+      "jimi_max_version" : null,
+      "plugins" : ["remote"]
+   },
+   "felids" : {
+    "ssh_username" : {
+         "description" : "Username to connect to the remote switches over SSH"
+      },
+      "ssh_password" : {
+         "description" : "Password to connect to the remote switches over SSH"
+      },
+      "ssh_enable" : {
+         "description" : "Enable password to connect to the remote switches over SSH"
+      }
+   }
+}
