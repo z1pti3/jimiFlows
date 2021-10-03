@@ -1,0 +1,276 @@
+{
+   "flow": [
+      {
+         "flowID": "0d387c13-85f9-4885-93df-7f50eb26824c",
+         "next": [
+            {
+               "flowID": "08547fd3-3490-4c93-b1c7-df25715c1a15",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "trigger",
+         "subtype": "testFireTrigger",
+         "triggerID": "612264b2901e1499dfdbe7db"
+      },
+      {
+         "flowID": "fd5138c9-f036-44d9-b46b-1a94478f9993",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "516d84ac-38c4-4e85-9817-f729ee669272",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "6122435fd91a704b5829a97a"
+      },
+      {
+         "flowID": "516d84ac-38c4-4e85-9817-f729ee669272",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "060b020f-12fc-4062-a488-fbbdb9648a19",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "612264b4901e1499dfdbe7eb"
+      },
+      {
+         "flowID": "060b020f-12fc-4062-a488-fbbdb9648a19",
+         "type": "action",
+         "next": [
+            {
+               "flowID": "09be552c-5388-408a-b922-f75a6edd8f5e",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "actionID": "61224c53901e1499dfdbe690"
+      },
+      {
+         "flowID": "08547fd3-3490-4c93-b1c7-df25715c1a15",
+         "next": [
+            {
+               "flowID": "fd5138c9-f036-44d9-b46b-1a94478f9993",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "actionID": "612264b5901e1499dfdbe7f1"
+      },
+      {
+         "flowID": "a837a4ea-fc5c-46a6-891e-080fb0f881e8",
+         "next": [
+            {
+               "flowID": "fd5138c9-f036-44d9-b46b-1a94478f9993",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "forEach",
+         "actionID": "61226c638b3053d10da2ab22"
+      },
+      {
+         "flowID": "09be552c-5388-408a-b922-f75a6edd8f5e",
+         "next": [
+            {
+               "flowID": "a837a4ea-fc5c-46a6-891e-080fb0f881e8",
+               "logic": true,
+               "order": 0
+            }
+         ],
+         "type": "action",
+         "subtype": "remoteDisconnect",
+         "actionID": "61225e82901e1499dfdbe79c"
+      }
+   ],
+   "action": {
+      "6122435fd91a704b5829a97a": {
+         "className": "remoteConnectCisco",
+         "_id": "6122435fd91a704b5829a97a",
+         "comment": "",
+         "createdBy": "",
+         "deviceHostname": "%%data[event][name]%%",
+         "enable_password": "",
+         "enabled": true,
+         "errorContinue": false,
+         "host": "%%data[event][ip]%%",
+         "log": false,
+         "logicString": "",
+         "name": "Connect to Switch",
+         "port": "22",
+         "scope": 0,
+         "ssh_password": "",
+         "ssh_username": "admin",
+         "systemCrashHandler": false,
+         "timeout": 5,
+         "varDefinitions": {
+            "device": {
+               "value": "%%data[event][name]%%"
+            }
+         }
+      },
+      "612264b4901e1499dfdbe7eb": {
+         "className": "remoteCommand",
+         "_id": "612264b4901e1499dfdbe7eb",
+         "arguments": [],
+         "command": "show cdp neighbors detail",
+         "comment": "",
+         "connection_id": "",
+         "createdBy": "",
+         "elevate": false,
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "show cdp neighbors detail",
+         "runAs": "",
+         "scope": 0,
+         "systemCrashHandler": false,
+         "timeout": 60,
+         "varDefinitions": {}
+      },
+      "61224c53901e1499dfdbe690": {
+         "className": "scriptBlock",
+         "_id": "61224c53901e1499dfdbe690",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "Format and Match Output",
+         "scope": 0,
+         "scriptBlock": "def run(data):\n\timport re\n\tneighbors = data[\"flowData\"][\"action\"][\"data\"].split(\"-------------------------\")\n\tnextHops = []\n\tfor neighbor in neighbors:\n\t\tneighbor = neighbor.replace(\"\\r\\n\",\"\\n\").replace(\"\\t\",\"   \").replace(\"\\b\",\" \")\n\t\tmatches = re.finditer(\"Device ID: ([^\\n]+)\\nEntry address\\(es\\): \\n +IP address: ([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3})\\n.*\\n.*Interface: ([a-zA-Z0-9\\/]+),\",neighbor, re.MULTILINE)\n\t\tfor matchNum, match in enumerate(matches, start=1):\n\t\t\tif data[\"flowData\"][\"event\"][\"name\"] not in data[\"eventData\"][\"var\"][\"topology\"]:\n\t\t\t\tdata[\"eventData\"][\"var\"][\"topology\"][data[\"flowData\"][\"event\"][\"name\"]] = { \"name\" : data[\"flowData\"][\"event\"][\"name\"], \"ip\" : data[\"flowData\"][\"event\"][\"ip\"], \"links\" : { } }\n\t\t\tif match.group(1).split(\".\")[0] not in data[\"eventData\"][\"var\"][\"topology\"][data[\"flowData\"][\"event\"][\"name\"]][\"links\"]:\n\t\t\t\tdata[\"eventData\"][\"var\"][\"topology\"][data[\"flowData\"][\"event\"][\"name\"]][\"links\"][match.group(1).split(\".\")[0]] = []\n\t\t\tif match.group(3) not in data[\"eventData\"][\"var\"][\"topology\"][data[\"flowData\"][\"event\"][\"name\"]][\"links\"][match.group(1).split(\".\")[0]]:\n\t\t\t\tdata[\"eventData\"][\"var\"][\"topology\"][data[\"flowData\"][\"event\"][\"name\"]][\"links\"][match.group(1).split(\".\")[0]].append(match.group(3))\n\t\t\tif match.group(1).split(\".\")[0] not in data[\"eventData\"][\"var\"][\"topology\"]:\n\t\t\t\tfound = False\n\t\t\t\tfor nextHop in nextHops:\n\t\t\t\t\tif nextHop[\"name\"] == match.group(1).split(\".\")[0]:\n\t\t\t\t\t\tfound = True\n\t\t\t\tif not found:\n\t\t\t\t\tnextHops.append({ \"name\" : match.group(1).split(\".\")[0], \"ip\" : match.group(2) })\n\n\n\tdata[\"flowData\"][\"var\"][\"nextHops\"] = nextHops\n\treturn (True,0,data)",
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "612264b5901e1499dfdbe7f1": {
+         "className": "action",
+         "_id": "612264b5901e1499dfdbe7f1",
+         "comment": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "Define Topology Output",
+         "scope": 0,
+         "systemCrashHandler": false,
+         "varDefinitions": {
+            "topology": {
+               "scope": 1,
+               "value": {}
+            }
+         }
+      },
+      "61226c638b3053d10da2ab22": {
+         "className": "forEach",
+         "_id": "61226c638b3053d10da2ab22",
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "events": [],
+         "eventsField": "%%data[var][nextHops]%%",
+         "limit": 0,
+         "log": false,
+         "logicString": "",
+         "manual": false,
+         "mergeEvents": false,
+         "name": "forEach CDP Neighbor",
+         "scope": 0,
+         "skip": 0,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      },
+      "61225e82901e1499dfdbe79c": {
+         "className": "remoteDisconnect",
+         "_id": "61225e82901e1499dfdbe79c",
+         "comment": "",
+         "connection_id": "",
+         "createdBy": "",
+         "enabled": true,
+         "errorContinue": false,
+         "log": false,
+         "logicString": "",
+         "name": "Disconnect",
+         "scope": 0,
+         "systemCrashHandler": false,
+         "varDefinitions": {}
+      }
+   },
+   "trigger": {
+      "612264b2901e1499dfdbe7db": {
+         "className": "testFireTrigger",
+         "_id": "612264b2901e1499dfdbe7db",
+         "attemptCount": 0,
+         "autoRestartCount": 3,
+         "clusterSet": 0,
+         "comment": "",
+         "concurrency": 0,
+         "createdBy": "",
+         "enabled": false,
+         "events": [
+            {
+               "ip": "10.1.0.2",
+               "name": "core"
+            }
+         ],
+         "executionCount": 0,
+         "failOnActionFailure": true,
+         "lastCheck": 0.0,
+         "logicString": "",
+         "maxDuration": 60,
+         "name": "Spider From",
+         "schedule": "",
+         "scope": 0,
+         "startTime": 0.0,
+         "systemIndex": 0,
+         "threaded": false,
+         "varDefinitions": {}
+      }
+   },
+   "ui": {
+      "0d387c13-85f9-4885-93df-7f50eb26824c": {
+         "x": -1159,
+         "y": -137,
+         "title": "Spider From"
+      },
+      "fd5138c9-f036-44d9-b46b-1a94478f9993": {
+         "x": -620,
+         "y": -137,
+         "title": "Connect to Switch"
+      },
+      "516d84ac-38c4-4e85-9817-f729ee669272": {
+         "x": -131,
+         "y": -140,
+         "title": "show cdp neighbors detail"
+      },
+      "060b020f-12fc-4062-a488-fbbdb9648a19": {
+         "x": -133,
+         "y": 49,
+         "title": "Format and Match Output"
+      },
+      "08547fd3-3490-4c93-b1c7-df25715c1a15": {
+         "x": -902,
+         "y": -137,
+         "title": "Define Topology Output"
+      },
+      "a837a4ea-fc5c-46a6-891e-080fb0f881e8": {
+         "x": -621,
+         "y": 52,
+         "title": "forEach CDP Neighbor"
+      },
+      "09be552c-5388-408a-b922-f75a6edd8f5e": {
+         "x": -391,
+         "y": 51,
+         "title": "Disconnect"
+      }
+   }
+}
